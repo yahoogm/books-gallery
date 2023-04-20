@@ -4,13 +4,15 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <div className="navbar px-14">
+    <div className="navbar px-14 py-6">
       <div className="flex-1 space-x-20">
         <a className="normal-case">
-          <Title text={'Books Gallery'} />
+          <Title />
         </a>
 
-        <Link href="#">About</Link>
+        <Link href="#" className="text-black font-semibold">
+          About
+        </Link>
       </div>
       <div className="flex-none">
         <div className="dropdown dropdown-end">
