@@ -10,9 +10,9 @@ name: Deno
 
 on:
   push:
-    branches: ["master"]
+    branches: ['master']
   pull_request:
-    branches: ["master"]
+    branches: ['master']
 
 permissions:
   contents: read
@@ -36,7 +36,7 @@ jobs:
       #   run: deno fmt --check
 
       - name: Run linter
-        run: deno lint
+        run: yarn lint
 
       - name: Run tests
         run: deno test -A
