@@ -1,9 +1,9 @@
-import Title from '@/components/atoms/Title/Title';
+import Title from '@/components/atoms/Title/Title.atom';
 import { FaGithubSquare, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="footer items-center px-14 py-4 text-neutral-content bg-[#9ca3af] fixed bottom-0">
+    <footer className="footer items-center px-14 py-4 text-neutral-content bg-[#9ca3af]">
       <div className="items-center grid-flow-col">
         <Title />
         <p>
