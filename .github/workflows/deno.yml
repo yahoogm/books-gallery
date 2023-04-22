@@ -36,7 +36,7 @@ jobs:
       #   run: deno fmt --check
 
       - name: Run linter
-        run: yarn lint
+        run: deno lint
 
       - name: Run tests
         run: deno test -A
