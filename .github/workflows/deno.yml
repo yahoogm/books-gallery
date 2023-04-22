@@ -36,7 +36,7 @@ jobs:
       #   run: deno fmt --check
 
       - name: Run linter
-        run: deno lint --ignore=.pnp.cjs,.pnp.loader.mjs,jsconfig.json
+        run: deno lint --ignore=/home/runner/work/books-gallery/books-gallery/.pnp.cjs,/home/runner/work/books-gallery/books-gallery/.pnp.loader.mjs
 
       - name: Run tests
         run: deno test -A
