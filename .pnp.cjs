@@ -35,6 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.38.0"],\
             ["eslint-config-next", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:13.3.0"],\
             ["firebase", "npm:9.20.0"],\
+            ["formik", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.2.9"],\
             ["husky", "npm:8.0.3"],\
             ["next", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:13.3.0"],\
             ["postcss", "npm:8.4.22"],\
@@ -2116,6 +2117,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.38.0"],\
             ["eslint-config-next", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:13.3.0"],\
             ["firebase", "npm:9.20.0"],\
+            ["formik", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.2.9"],\
             ["husky", "npm:8.0.3"],\
             ["next", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:13.3.0"],\
             ["postcss", "npm:8.4.22"],\
@@ -2554,6 +2556,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/deep-is-npm-0.1.4-88938b5a67-edb65dd0d7.zip/node_modules/deep-is/",\
           "packageDependencies": [\
             ["deep-is", "npm:0.1.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["deepmerge", [\
+        ["npm:2.2.1", {\
+          "packageLocation": "./.yarn/cache/deepmerge-npm-2.2.1-44c00cbffa-284b710650.zip/node_modules/deepmerge/",\
+          "packageDependencies": [\
+            ["deepmerge", "npm:2.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3431,6 +3442,35 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["asynckit", "npm:0.4.0"],\
             ["combined-stream", "npm:1.0.8"],\
             ["mime-types", "npm:2.1.35"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["formik", [\
+        ["npm:2.2.9", {\
+          "packageLocation": "./.yarn/cache/formik-npm-2.2.9-0e8cb516ca-f07f80eee8.zip/node_modules/formik/",\
+          "packageDependencies": [\
+            ["formik", "npm:2.2.9"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.2.9", {\
+          "packageLocation": "./.yarn/__virtual__/formik-virtual-5a683f78ae/0/cache/formik-npm-2.2.9-0e8cb516ca-f07f80eee8.zip/node_modules/formik/",\
+          "packageDependencies": [\
+            ["formik", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.2.9"],\
+            ["@types/react", null],\
+            ["deepmerge", "npm:2.2.1"],\
+            ["hoist-non-react-statics", "npm:3.3.2"],\
+            ["lodash", "npm:4.17.21"],\
+            ["lodash-es", "npm:4.17.21"],\
+            ["react", "npm:18.2.0"],\
+            ["react-fast-compare", "npm:2.0.4"],\
+            ["tiny-warning", "npm:1.0.3"],\
+            ["tslib", "npm:1.14.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4423,6 +4463,24 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["locate-path", "npm:6.0.0"],\
             ["p-locate", "npm:5.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash", [\
+        ["npm:4.17.21", {\
+          "packageLocation": "./.yarn/cache/lodash-npm-4.17.21-6382451519-eb835a2e51.zip/node_modules/lodash/",\
+          "packageDependencies": [\
+            ["lodash", "npm:4.17.21"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["lodash-es", [\
+        ["npm:4.17.21", {\
+          "packageLocation": "./.yarn/cache/lodash-es-npm-4.17.21-b45832dfce-05cbffad6e.zip/node_modules/lodash-es/",\
+          "packageDependencies": [\
+            ["lodash-es", "npm:4.17.21"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5444,6 +5502,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-fast-compare", [\
+        ["npm:2.0.4", {\
+          "packageLocation": "./.yarn/cache/react-fast-compare-npm-2.0.4-ab3f6356e2-06046595f9.zip/node_modules/react-fast-compare/",\
+          "packageDependencies": [\
+            ["react-fast-compare", "npm:2.0.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-icons", [\
         ["npm:4.8.0", {\
           "packageLocation": "./.yarn/cache/react-icons-npm-4.8.0-aa5423cd6c-4dbba7ad98.zip/node_modules/react-icons/",\
@@ -6181,6 +6248,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tiny-glob", "npm:0.2.9"],\
             ["globalyzer", "npm:0.1.0"],\
             ["globrex", "npm:0.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["tiny-warning", [\
+        ["npm:1.0.3", {\
+          "packageLocation": "./.yarn/cache/tiny-warning-npm-1.0.3-750b7a07c4-da62c4acac.zip/node_modules/tiny-warning/",\
+          "packageDependencies": [\
+            ["tiny-warning", "npm:1.0.3"]\
           ],\
           "linkType": "HARD"\
         }]\
