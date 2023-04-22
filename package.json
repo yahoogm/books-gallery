@@ -6,9 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --dir=config/ --dir=components/ --dir=pages/",
     "prepare": "husky install",
-    "pre-commit": "yarn lint --fix"
+    "pre-commit": "next lint --fix"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
