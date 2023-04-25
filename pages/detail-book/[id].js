@@ -1,14 +1,18 @@
 import HeaderAndFooter from '@/components/templates/HeaderAndFooter/HeaderAndFooter.template';
 import Head from 'next/head';
 import axios from 'axios';
+import { addDetailBook } from '@/config/redux/books/bookSlice.reducer';
+import { useDispatch } from 'react-redux';
 
 const DetailBook = ({ book }) => {
+  const dispatch = useDispatch();
+  dispatch(addDetailBook(book));
+
   return (
     <HeaderAndFooter>
       <Head>
         <title>Detail Book</title>
       </Head>
-      {book.id}
     </HeaderAndFooter>
   );
 };
