@@ -2,18 +2,12 @@ import Button from '@/components/atoms/Button/Button.atom';
 import Image from 'next/image';
 import { HeroImage } from '@/public/assets';
 import { useRouter } from 'next/router';
+import { modifiedName } from '@/config/functions/Functions';
 
 const Card = ({ id, title = 'Not found', authors = ['Not found'], publisher = 'Not found', publishedDate = 'Not found', cover = HeroImage }) => {
   // router
   const router = useRouter();
-
-  // handle nama author jika lebih dari 1
-  const modifiedName = authors?.map((author, idx) => {
-    if (idx !== authors.length - 1) {
-      return author + ',' + '';
-    }
-    return author;
-  });
+  const authorsName = modifiedName(authors);
 
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
@@ -26,7 +20,7 @@ const Card = ({ id, title = 'Not found', authors = ['Not found'], publisher = 'N
         <div className="grid grid-cols-5 space-x-2">
           <span className="col-span-1">Author :</span>
 
-          <span className="truncate col-span-4 space-x-2">{authors.length != null || undefined ? modifiedName : 'null'}</span>
+          <span className="truncate col-span-4 space-x-2">{authors.length != null || undefined ? authorsName : 'null'}</span>
         </div>
 
         <div className="grid grid-cols-3 space-x-2">
