@@ -1,8 +1,12 @@
 import Button from '@/components/atoms/Button/Button.atom';
 import Image from 'next/image';
 import { HeroImage } from '@/public/assets';
+import { useRouter } from 'next/router';
 
-const Card = ({ title = 'Not found', authors = ['Not found'], publisher = 'Not found', publishedDate = 'Not found', cover = HeroImage }) => {
+const Card = ({ id, title = 'Not found', authors = ['Not found'], publisher = 'Not found', publishedDate = 'Not found', cover = HeroImage }) => {
+  // router
+  const router = useRouter();
+
   // handle nama author jika lebih dari 1
   const modifiedName = authors?.map((author, idx) => {
     if (idx !== authors.length - 1) {
@@ -36,7 +40,7 @@ const Card = ({ title = 'Not found', authors = ['Not found'], publisher = 'Not f
         </div>
 
         <div className="card-actions justify-end">
-          <Button text={'Detail'} variant={'btn-primary'} />
+          <Button text={'Detail'} variant={'btn-primary'} onClick={() => router.push(`/detail-book/${id}`)} />
         </div>
       </div>
     </div>
