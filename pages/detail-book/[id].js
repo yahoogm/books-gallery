@@ -8,6 +8,7 @@ const DetailBook = ({ book }) => {
       <Head>
         <title>Detail Book</title>
       </Head>
+      {book.id}
     </HeaderAndFooter>
   );
 };
