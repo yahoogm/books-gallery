@@ -12,10 +12,11 @@ const CardContent = () => {
         <CardLoadingAnimation />
       ) : (
         <div className="grid grid-cols-3 gap-14">
-          {cardModel.search?.items?.map((search, idx) => {
+          {cardModel.search?.items?.map((search) => {
             return (
               <Card
-                key={idx.toString()}
+                key={search.id}
+                id={search.id}
                 title={search.volumeInfo.title}
                 authors={search.volumeInfo?.authors}
                 cover={search.volumeInfo.imageLinks?.thumbnail}

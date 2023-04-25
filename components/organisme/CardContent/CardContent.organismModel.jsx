@@ -1,11 +1,11 @@
-import { useSearchSelector, useSearchTypeSelector } from '@/config/redux/search/searchSelector.reducer';
-import { retrieveSearch } from '@/config/redux/search/searchThunk.reducer';
+import { useSearchBooksSelector, useSearchBooksTypeSelector } from '@/config/redux/books/bookSelector.reducer';
+import { retrieveSearchBooks } from '@/config/redux/books/bookThunk.reducer';
 
 const useCardContentOrganismModel = () => {
-  const search = useSearchSelector();
-  const type = useSearchTypeSelector();
+  const search = useSearchBooksSelector();
+  const type = useSearchBooksTypeSelector();
 
-  const loading = type === retrieveSearch.pending.type;
+  const loading = type === retrieveSearchBooks.pending.type;
 
   return { loading, search };
 };
