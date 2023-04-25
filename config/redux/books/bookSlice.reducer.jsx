@@ -3,6 +3,7 @@ import { retrieveSearchBooks } from './bookThunk.reducer';
 
 const initialState = {
   books: [],
+  detailBook: null,
 
   retrieveSearchLoading: false,
   retrieveSearchError: undefined,
@@ -13,7 +14,11 @@ const initialState = {
 export const searchSlice = createSlice({
   name: 'product',
   initialState,
-  reducers: {},
+  reducers: {
+    addDetailBook: (state, action) => {
+      state.detailBook = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       //#region retrieve search
@@ -46,5 +51,6 @@ export const searchSlice = createSlice({
   },
 });
 
-const { reducer: searchReducer } = searchSlice;
+const { actions, reducer: searchReducer } = searchSlice;
+export const { addDetailBook } = actions;
 export default searchReducer;
