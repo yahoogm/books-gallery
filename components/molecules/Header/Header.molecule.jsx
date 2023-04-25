@@ -6,9 +6,9 @@ const Header = () => {
   return (
     <div className="navbar px-14 py-6">
       <div className="flex-1 space-x-20">
-        <a className="normal-case">
+        <Link href="/" className="normal-case">
           <Title />
-        </a>
+        </Link>
 
         <Link href="#" className="text-black font-semibold">
           About
