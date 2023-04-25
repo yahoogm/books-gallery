@@ -43,6 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:18.2.0"],\
             ["react-icons", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:4.8.0"],\
             ["react-redux", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:8.0.5"],\
+            ["swr", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.1.4"],\
             ["tailwindcss", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:3.3.1"]\
           ],\
           "linkType": "SOFT"\
@@ -2125,6 +2126,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:18.2.0"],\
             ["react-icons", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:4.8.0"],\
             ["react-redux", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:8.0.5"],\
+            ["swr", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.1.4"],\
             ["tailwindcss", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:3.3.1"]\
           ],\
           "linkType": "SOFT"\
@@ -6128,6 +6130,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/supports-preserve-symlinks-flag-npm-1.0.0-f17c4d0028-53b1e247e6.zip/node_modules/supports-preserve-symlinks-flag/",\
           "packageDependencies": [\
             ["supports-preserve-symlinks-flag", "npm:1.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["swr", [\
+        ["npm:2.1.4", {\
+          "packageLocation": "./.yarn/cache/swr-npm-2.1.4-d5c9397af9-1ee8f0cc45.zip/node_modules/swr/",\
+          "packageDependencies": [\
+            ["swr", "npm:2.1.4"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.1.4", {\
+          "packageLocation": "./.yarn/__virtual__/swr-virtual-138baf2169/0/cache/swr-npm-2.1.4-d5c9397af9-1ee8f0cc45.zip/node_modules/swr/",\
+          "packageDependencies": [\
+            ["swr", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.1.4"],\
+            ["@types/react", null],\
+            ["react", "npm:18.2.0"],\
+            ["use-sync-external-store", "virtual:df9418fe1a01bc4af91dc49ca9efad3e2e9cb28753b79201752a35390ce432e40742075d8ddf874f28211e7a8c6150d180e2bb56f30dce18c10e549ae5b54559#npm:1.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
