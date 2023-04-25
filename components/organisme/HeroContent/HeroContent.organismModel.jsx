@@ -1,4 +1,4 @@
-import { retrieveSearch } from '@/config/redux/search/searchThunk.reducer';
+import { retrieveSearchBooks } from '@/config/redux/books/bookThunk.reducer';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
 
@@ -11,7 +11,7 @@ const useHeroContentOrganismModel = () => {
     },
     onSubmit: (values) => {
       const { search } = values;
-      dispatch(retrieveSearch({ search }));
+      dispatch(retrieveSearchBooks({ search }));
     },
   });
   return { formik };
