@@ -1,7 +1,7 @@
 const Information = ({ title, information }) => {
   return (
     <div>
-      <span>{`${title} :`}</span>
+      <span className="font-semibold">{`${title} : `}</span>
       <span>{information}</span>
     </div>
   );
