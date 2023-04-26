@@ -3,6 +3,7 @@ import Head from 'next/head';
 import axios from 'axios';
 import { addDetailBook } from '@/config/redux/books/bookSlice.reducer';
 import { useDispatch } from 'react-redux';
+import BookDetailContent from '@/components/organisme/BookDetailContent/BookDetailContent.organism';
 
 const DetailBook = ({ book }) => {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ const DetailBook = ({ book }) => {
       <Head>
         <title>Detail Book</title>
       </Head>
+      <BookDetailContent />
     </HeaderAndFooter>
   );
 };
