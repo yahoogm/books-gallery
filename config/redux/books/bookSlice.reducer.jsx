@@ -5,9 +5,6 @@ const initialState = {
   books: [],
   detailBook: null,
 
-  retrieveSearchLoading: false,
-  retrieveSearchError: undefined,
-
   type: '',
 };
 
@@ -25,8 +22,6 @@ export const searchSlice = createSlice({
       .addCase(retrieveSearchBooks.pending, (state, action) => {
         return {
           ...state,
-          retrieveSearchLoading: true,
-          retrieveSearchError: undefined,
           type: action.type,
         };
       })
@@ -34,16 +29,13 @@ export const searchSlice = createSlice({
         return {
           ...state,
           books: action.payload,
-          retrieveSearchLoading: false,
-          retrieveSearchError: undefined,
+
           type: action.type,
         };
       })
       .addCase(retrieveSearchBooks.rejected, (state, action) => {
         return {
           ...state,
-          retrieveSearchLoading: false,
-          retrieveSearchError: action.payload,
           type: action.type,
         };
       });
