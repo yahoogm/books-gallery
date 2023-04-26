@@ -7,7 +7,7 @@ const Hero = ({ formik }) => {
   return (
     <div className="hero">
       <div className="hero-content flex-col lg:flex-row-reverse px-0">
-        <Image src={HeroImage} width={'auto'} height={'auto'} priority={true} alt="HeroImage" className="max-w-lg rounded-lg shadow-2xl" />
+        <Image src={HeroImage} priority={true} alt="HeroImage" className="max-w-lg rounded-lg shadow-2xl" placeholder="blur" />
         <div>
           <h1 className="text-5xl font-bold text-secondary">Online Books</h1>
           <p className="py-6">
