@@ -10,7 +10,10 @@ const Hero = ({ formik }) => {
         <Image src={HeroImage} width={'auto'} height={'auto'} priority={true} alt="HeroImage" className="max-w-lg rounded-lg shadow-2xl" />
         <div>
           <h1 className="text-5xl font-bold text-secondary">Online Books</h1>
-          <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+          <p className="py-6">
+            Makes it easier for book lovers to read because it can display various kinds of books from various genres and famous authors to meet the needs of different readers. For the type of book displayed using the
+            <span className="font-semibold"> Google Books API</span>.
+          </p>
           <form
             className="space-x-2"
             onSubmit={(event) => {
