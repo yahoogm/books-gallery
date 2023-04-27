@@ -8,7 +8,7 @@ const BookDetailContent = () => {
     <div className="flex w-full space-x-5">
       <CardImage volume={model.bookDetail.volumeInfo} />
       <div className="divider divider-horizontal"></div>
-      <CardInformation volume={model.bookDetail.volumeInfo} authorsName={model.authorsName} categoriesName={model.categoriesName} />
+      <CardInformation volume={model.bookDetail.volumeInfo} authorsName={model.authorsName} categoriesName={model.categoriesName} id={model.bookDetail.id} />
     </div>
   );
 };
