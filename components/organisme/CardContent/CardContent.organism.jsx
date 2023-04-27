@@ -13,10 +13,10 @@ const CardContent = () => {
       ) : (
         <div className="grid grid-cols-3 gap-14">
           {cardModel.search.totalItems !== 0 ? (
-            cardModel.search?.items?.map((search) => {
+            cardModel.search?.items?.map((search, idx) => {
               return (
                 <Card
-                  key={search.id}
+                  key={idx.toString()}
                   id={search.id}
                   title={search.volumeInfo.title}
                   authors={search.volumeInfo?.authors}
