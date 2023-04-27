@@ -10,9 +10,9 @@ const Header = () => {
           <Title />
         </Link>
 
-        <Link href="#" className="text-black font-semibold">
+        <a href="#" className="text-black font-semibold">
           About
-        </Link>
+        </a>
       </div>
       <div className="flex-none">
         <div className="dropdown dropdown-end">
