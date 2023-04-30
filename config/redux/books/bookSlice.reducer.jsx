@@ -3,6 +3,7 @@ import { retrieveSearchBooks } from './bookThunk.reducer';
 
 const initialState = {
   books: [],
+  readBook: [],
   detailBook: null,
 
   type: '',
@@ -13,7 +14,17 @@ export const searchSlice = createSlice({
   initialState,
   reducers: {
     addDetailBook: (state, action) => {
-      state.detailBook = action.payload;
+      return {
+        ...state,
+        detailBook: action.payload,
+      };
+    },
+
+    addReadBook: (state, action) => {
+      return {
+        ...state,
+        readBook: action.payload,
+      };
     },
   },
   extraReducers: (builder) => {
@@ -44,5 +55,5 @@ export const searchSlice = createSlice({
 });
 
 const { actions, reducer: searchReducer } = searchSlice;
-export const { addDetailBook } = actions;
+export const { addDetailBook, addReadBook } = actions;
 export default searchReducer;
