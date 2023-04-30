@@ -1,12 +1,15 @@
-import { addReadBook } from '@/config/redux/books/bookSlice.reducer';
-import { useReadBook } from '@/config/redux/books/bookSelector.reducer';
+import HeaderAndFooter from '@/components/templates/HeaderAndFooter/HeaderAndFooter.template';
+import Head from 'next/head';
 import axios from 'axios';
+import { addReadBook } from '@/config/redux/books/bookSlice.reducer';
 import { useDispatch } from 'react-redux';
+import Script from 'next/script';
+import BookDetailContent from '@/components/organisme/BookDetailContent/BookDetailContent.organism';
 import { useEffect, useRef } from 'react';
+import { useReadBook } from '@/config/redux/books/bookSelector.reducer';
 import { toast } from 'react-toastify';
-import DetailBook from './DetailBook.page';
 
-const BookLogic = ({ book }) => {
+const DetailBook = ({ book }) => {
   const dispatch = useDispatch();
   const identifiers = useReadBook();
   const canvasRef = useRef();
@@ -14,7 +17,6 @@ const BookLogic = ({ book }) => {
   useEffect(() => {
     const bookId = book.id;
     const industryIdentifiers = book.volumeInfo.industryIdentifiers;
-
     if (bookId && industryIdentifiers) {
       dispatch(addReadBook([bookId, 'ISBN:' + industryIdentifiers[0].identifier]));
     } else {
@@ -26,15 +28,33 @@ const BookLogic = ({ book }) => {
     toast('Could not embed the book', { type: 'error' });
   };
 
-  const initialize = async () => {
+  const initialize = () => {
     let viewer = new google.books.DefaultViewer(canvasRef.current); // eslint-disable-line no-undef
     viewer.load(identifiers, alertNotFound);
   };
 
-  return <DetailBook book={book} showBook={initialize} canvasRef={canvasRef} />;
+  return (
+    <HeaderAndFooter>
+      <Head>
+        <title>Detail Book</title>
+      </Head>
+      <BookDetailContent book={book} showBook={initialize} />
+      <Script
+        id="google-books-script"
+        src="https://www.google.com/books/jsapi.js"
+        strategy="afterInteractive"
+        onLoad={() => {
+          google.books.load(); // eslint-disable-line no-undef
+          google.books.setOnLoadCallback(() => initialize); // eslint-disable-line no-undef
+        }}
+      />
+
+      <div ref={canvasRef} id="viewerCanvas" className="w-full h-[700px] m-auto"></div>
+    </HeaderAndFooter>
+  );
 };
 
-export default BookLogic;
+export default DetailBook;
 
 export async function getServerSideProps(context) {
   const { params } = context;
