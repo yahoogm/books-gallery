@@ -1,16 +1,15 @@
-import HeaderAndFooter from '@/components/templates/HeaderAndFooter/HeaderAndFooter.template';
-import Head from 'next/head';
-import axios from 'axios';
 import { addReadBook } from '@/config/redux/books/bookSlice.reducer';
+import { useReadBook } from '@/config/redux/books/bookSelector.reducer';
+import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import Script from 'next/script';
-import BookDetailContent from '@/components/organisme/BookDetailContent/BookDetailContent.organism';
-import useDetailBookModel from './DetailBook.pageModel';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
+import { toast } from 'react-toastify';
+import DetailBook from './DetailBook.page';
 
-const DetailBook = ({ book }) => {
-  const model = useDetailBookModel();
+const BookLogic = ({ book }) => {
   const dispatch = useDispatch();
+  const identifiers = useReadBook();
+  const canvasRef = useRef();
 
   useEffect(() => {
     const bookId = book.id;
@@ -23,28 +22,19 @@ const DetailBook = ({ book }) => {
     }
   }, [book.id, book.volumeInfo.industryIdentifiers, dispatch]);
 
-  return (
-    <HeaderAndFooter>
-      <Head>
-        <title>Detail Book</title>
-      </Head>
-      <BookDetailContent book={book} showBook={model.initialize} />
-      <Script
-        id="google-books-script"
-        src="https://www.google.com/books/jsapi.js"
-        strategy="afterInteractive"
-        onLoad={() => {
-          google.books.load(); // eslint-disable-line no-undef
-          google.books.setOnLoadCallback(() => model.initialize); // eslint-disable-line no-undef
-        }}
-      />
+  const alertNotFound = () => {
+    toast('Could not embed the book', { type: 'error' });
+  };
 
-      <div ref={model.canvasRef} id="viewerCanvas" className="w-full h-[700px] m-auto"></div>
-    </HeaderAndFooter>
-  );
+  const initialize = async () => {
+    let viewer = new google.books.DefaultViewer(canvasRef.current); // eslint-disable-line no-undef
+    viewer.load(identifiers, alertNotFound);
+  };
+
+  return <DetailBook book={book} showBook={initialize} canvasRef={canvasRef} />;
 };
 
-export default DetailBook;
+export default BookLogic;
 
 export async function getServerSideProps(context) {
   const { params } = context;
