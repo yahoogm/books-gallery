@@ -5,3 +5,5 @@ export const useSearchBooksSelector = () => useSelector((state) => state.book.bo
 export const useSearchBooksTypeSelector = () => useSelector((state) => state.book.type);
 
 export const useDetailBook = () => useSelector((state) => state.book.detailBook);
+
+export const useReadBook = () => useSelector((state) => state.book.readBook);
