@@ -1,16 +1,7 @@
 import Button from '@/components/atoms/Button/Button.atom';
 import Information from '@/components/atoms/Information/Information.atom';
-import { useRouter } from 'next/router';
 
-const CardInformation = ({ volume, authorsName, categoriesName, id }) => {
-  const router = useRouter();
-  const handleRoute = () => {
-    if (id && volume.industryIdentifiers) {
-      return router.push(`/read-book/?id=${id}&isbn=${volume.industryIdentifiers[0].identifier}`);
-    } else {
-      return router.push(`/read-book/?id=${id}`);
-    }
-  };
+const CardInformation = ({ volume, authorsName, categoriesName, showBook }) => {
   return (
     <div className="grid flex-grow rounded-box shadow-md items-center p-10">
       <div className="space-y-6">
@@ -23,7 +14,7 @@ const CardInformation = ({ volume, authorsName, categoriesName, id }) => {
           <Information title={'Category'} information={categoriesName ? categoriesName : 'Not found'} />
           <Information title={'Description'} information={volume.description ? volume.description : 'Not Found'} />
         </div>
-        <Button text={'read book'} type={'button'} variant={'btn-primary'} onClick={() => handleRoute()} />
+        <Button text={'read book'} type={'button'} variant={'btn-primary'} onClick={() => showBook()} />
       </div>
     </div>
   );
