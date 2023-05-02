@@ -1,4 +1,3 @@
-import Button from '@/components/atoms/Button/Button.atom';
 import Title from '@/components/atoms/Title/Title.atom';
 import Link from 'next/link';
 
@@ -16,7 +15,9 @@ const Header = () => {
       </div>
       <div className="flex-none">
         <div className="dropdown dropdown-end">
-          <Button text={'Sign In'} variant={'btn-primary'} />
+          <Link href="/sign-in" className="btn btn-primary">
+            Sign In
+          </Link>
         </div>
       </div>
     </div>
