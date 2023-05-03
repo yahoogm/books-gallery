@@ -1,7 +1,18 @@
 import Title from '@/components/atoms/Title/Title.atom';
 import Link from 'next/link';
+import {
+  useIsLoginSelector,
+  useUserSelector,
+} from '@/config/redux/user/userSelector.reducer';
+import { logoutUser } from '@/config/redux/user/userSlice.reducer';
+import { useDispatch } from 'react-redux';
 
-const Header = ({ isLogin, user, logout, dispatch }) => {
+const Header = () => {
+  const isLogin = useIsLoginSelector();
+  const user = useUserSelector();
+  const logout = logoutUser;
+  const dispatch = useDispatch();
+
   return (
     <div className="navbar px-14 py-6">
       <div className="flex-1 space-x-20">
