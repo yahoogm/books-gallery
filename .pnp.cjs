@@ -44,7 +44,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-icons", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:4.8.0"],\
             ["react-redux", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:8.0.5"],\
             ["react-toastify", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:9.1.2"],\
-            ["swr", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.1.4"],\
+            ["redux", "npm:4.2.1"],\
+            ["redux-persist", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:6.0.0"],\
+            ["redux-thunk", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.4.2"],\
             ["tailwindcss", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:3.3.1"]\
           ],\
           "linkType": "SOFT"\
@@ -1549,7 +1551,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-redux", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:8.0.5"],\
             ["redux", "npm:4.2.1"],\
-            ["redux-thunk", "virtual:c397d6d2fe9e19cee71768816944b6c667d1585ebf3efb5e315c02e9f8c50a21863c96be7eb72ecdaa54494360877d9317bbf75c1a00923deb2dd6d781e35fa7#npm:2.4.2"],\
+            ["redux-thunk", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.4.2"],\
             ["reselect", "npm:4.1.8"]\
           ],\
           "packagePeers": [\
@@ -2128,7 +2130,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-icons", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:4.8.0"],\
             ["react-redux", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:8.0.5"],\
             ["react-toastify", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:9.1.2"],\
-            ["swr", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.1.4"],\
+            ["redux", "npm:4.2.1"],\
+            ["redux-persist", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:6.0.0"],\
+            ["redux-thunk", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.4.2"],\
             ["tailwindcss", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:3.3.1"]\
           ],\
           "linkType": "SOFT"\
@@ -5586,7 +5590,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:18.2.0"],\
             ["react-is", "npm:18.2.0"],\
             ["react-native", null],\
-            ["redux", null],\
+            ["redux", "npm:4.2.1"],\
             ["use-sync-external-store", "virtual:df9418fe1a01bc4af91dc49ca9efad3e2e9cb28753b79201752a35390ce432e40742075d8ddf874f28211e7a8c6150d180e2bb56f30dce18c10e549ae5b54559#npm:1.2.0"]\
           ],\
           "packagePeers": [\
@@ -5671,6 +5675,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["redux-persist", [\
+        ["npm:6.0.0", {\
+          "packageLocation": "./.yarn/cache/redux-persist-npm-6.0.0-56dad69feb-edaf10dbf1.zip/node_modules/redux-persist/",\
+          "packageDependencies": [\
+            ["redux-persist", "npm:6.0.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:6.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/redux-persist-virtual-2d839f27f9/0/cache/redux-persist-npm-6.0.0-56dad69feb-edaf10dbf1.zip/node_modules/redux-persist/",\
+          "packageDependencies": [\
+            ["redux-persist", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:6.0.0"],\
+            ["@types/react", null],\
+            ["@types/redux", null],\
+            ["react", "npm:18.2.0"],\
+            ["redux", "npm:4.2.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "@types/redux",\
+            "react",\
+            "redux"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["redux-thunk", [\
         ["npm:2.4.2", {\
           "packageLocation": "./.yarn/cache/redux-thunk-npm-2.4.2-3acdaaf7b0-c7f757f6c3.zip/node_modules/redux-thunk/",\
@@ -5679,10 +5709,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:c397d6d2fe9e19cee71768816944b6c667d1585ebf3efb5e315c02e9f8c50a21863c96be7eb72ecdaa54494360877d9317bbf75c1a00923deb2dd6d781e35fa7#npm:2.4.2", {\
-          "packageLocation": "./.yarn/__virtual__/redux-thunk-virtual-ae62ace454/0/cache/redux-thunk-npm-2.4.2-3acdaaf7b0-c7f757f6c3.zip/node_modules/redux-thunk/",\
+        ["virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.4.2", {\
+          "packageLocation": "./.yarn/__virtual__/redux-thunk-virtual-6858a167a1/0/cache/redux-thunk-npm-2.4.2-3acdaaf7b0-c7f757f6c3.zip/node_modules/redux-thunk/",\
           "packageDependencies": [\
-            ["redux-thunk", "virtual:c397d6d2fe9e19cee71768816944b6c667d1585ebf3efb5e315c02e9f8c50a21863c96be7eb72ecdaa54494360877d9317bbf75c1a00923deb2dd6d781e35fa7#npm:2.4.2"],\
+            ["redux-thunk", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.4.2"],\
             ["@types/redux", null],\
             ["redux", "npm:4.2.1"]\
           ],\
@@ -6168,29 +6198,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/supports-preserve-symlinks-flag-npm-1.0.0-f17c4d0028-53b1e247e6.zip/node_modules/supports-preserve-symlinks-flag/",\
           "packageDependencies": [\
             ["supports-preserve-symlinks-flag", "npm:1.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["swr", [\
-        ["npm:2.1.4", {\
-          "packageLocation": "./.yarn/cache/swr-npm-2.1.4-d5c9397af9-1ee8f0cc45.zip/node_modules/swr/",\
-          "packageDependencies": [\
-            ["swr", "npm:2.1.4"]\
-          ],\
-          "linkType": "SOFT"\
-        }],\
-        ["virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.1.4", {\
-          "packageLocation": "./.yarn/__virtual__/swr-virtual-138baf2169/0/cache/swr-npm-2.1.4-d5c9397af9-1ee8f0cc45.zip/node_modules/swr/",\
-          "packageDependencies": [\
-            ["swr", "virtual:b3c24cf3c5fca93b474a5d3040cb31043dda85d7e82977097a31efea76c2c6f6ee81d24a83702cf8b7ff287f20e0beaff7eea360a7a25df5f61337b78f3099db#npm:2.1.4"],\
-            ["@types/react", null],\
-            ["react", "npm:18.2.0"],\
-            ["use-sync-external-store", "virtual:df9418fe1a01bc4af91dc49ca9efad3e2e9cb28753b79201752a35390ce432e40742075d8ddf874f28211e7a8c6150d180e2bb56f30dce18c10e549ae5b54559#npm:1.2.0"]\
-          ],\
-          "packagePeers": [\
-            "@types/react",\
-            "react"\
           ],\
           "linkType": "HARD"\
         }]\

@@ -1372,7 +1372,9 @@ __metadata:
     react-icons: ^4.8.0
     react-redux: ^8.0.5
     react-toastify: ^9.1.2
-    swr: ^2.1.4
+    redux: ^4.2.1
+    redux-persist: ^6.0.0
+    redux-thunk: ^2.4.2
     tailwindcss: 3.3.1
   languageName: unknown
   linkType: soft
@@ -4276,6 +4278,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"redux-persist@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "redux-persist@npm:6.0.0"
+  peerDependencies:
+    redux: ">4.0.0"
+  checksum: edaf10dbf17351ce8058d0802357adae8665b3a1ff39371834e37838ddbe1a79cccbc717b8ba54acb5307651ccf51d0f7dc1cbc8dbae0726ff952d11ef61c6b8
+  languageName: node
+  linkType: hard
+
 "redux-thunk@npm:^2.4.2":
   version: 2.4.2
   resolution: "redux-thunk@npm:2.4.2"
@@ -4739,17 +4750,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swr@npm:^2.1.4":
-  version: 2.1.4
-  resolution: "swr@npm:2.1.4"
-  dependencies:
-    use-sync-external-store: ^1.2.0
-  peerDependencies:
-    react: ^16.11.0 || ^17.0.0 || ^18.0.0
-  checksum: 1ee8f0cc45ce8896c148b51771e8dc7f4c7066cf07ce3323085275b6cd9608902e774cd20c1d7f7caa01e610e1432293ba569a6d7d51f006ee5d4479b39d1ee1
-  languageName: node
-  linkType: hard
-
 "synckit@npm:^0.8.5":
   version: 0.8.5
   resolution: "synckit@npm:0.8.5"
@@ -5000,7 +5000,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-sync-external-store@npm:^1.0.0, use-sync-external-store@npm:^1.2.0":
+"use-sync-external-store@npm:^1.0.0":
   version: 1.2.0
   resolution: "use-sync-external-store@npm:1.2.0"
   peerDependencies:
