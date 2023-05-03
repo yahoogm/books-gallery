@@ -5,9 +5,11 @@ import { useDispatch } from 'react-redux';
 import { loginUser } from '@/config/redux/user/userSlice.reducer';
 import { signInWithPopup } from 'firebase/auth';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 
 const FormSignIn = () => {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, provider)
@@ -17,6 +19,7 @@ const FormSignIn = () => {
         const profilePic = result.user.photoURL;
 
         dispatch(loginUser({ name, email, profilePic }));
+        router.push('/');
       })
       .catch((error) => {
         toast(error, { type: 'error' });
