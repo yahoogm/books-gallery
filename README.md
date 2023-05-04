@@ -3,6 +3,9 @@
 # About The Project
 
 This website-based books gallery application was built to make it easier for people who like to read to make it easier to access books, because the system is online, where we don't have to go to a bookstore.
+
+## Preview Home
+
 ![PREVIEW-HOME!](/public/assets/image/preview-home.png)
 
 # Build With
@@ -47,8 +50,6 @@ This website-based books gallery application was built to make it easier for peo
     Redux thunk is used to handle API calls that use asynchronous methods.
 
 # How to use
-
-<!-- ## Preview Home -->
 
 <!-- ## Preview home after search the books -->
 
