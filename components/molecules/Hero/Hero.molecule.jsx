@@ -20,7 +20,7 @@ const Hero = ({ formik }) => {
               event.preventDefault(), formik.handleSubmit(event);
             }}
           >
-            <Input placeholder={'Find your books here....'} value={formik.values.search} onChange={formik.handleChange} name={'search'} style={'bg-secondary placeholder:text-white text-white'} />
+            <Input placeholder={'Find your books here....'} value={formik.values.search} onChange={formik.handleChange} name={'search'} style={'bg-secondary placeholder:text-white text-white max-w-xs'} />
             <Button text={'Search'} variant={'btn-primary'} type={'submit'} />
           </form>
         </div>
