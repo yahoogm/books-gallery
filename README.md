@@ -2,7 +2,8 @@
 
 # About The Project
 
-This website-based books gallery application was built to make it easier for people who like to read to make it easier to access books, because the system is online, where we don't have to go to a bookstore.
+This website-based book gallery application was built to make it easier for people who like to read to more easily access books, because the system is online, where we don't have to go to a bookstore. You can read books directly in the application because the Google Books API provides an embedded viewer feature, but not all books can be read directly, for the reason I don't know for sure but the sentence is explained in the following Google Book API documentation.
+![PREVIEW-HOME!](/public/assets/image/embed-viewer-issue.png)
 
 ## Preview Home
 
