@@ -1,6 +1,4 @@
-# Project Title
-
-Books Gallery
+# Books Gallery
 
 # About The Project
 
