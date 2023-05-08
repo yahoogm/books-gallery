@@ -1,5 +1,6 @@
 import Title from '@/components/atoms/Title/Title.atom';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   useIsLoginSelector,
   useUserSelector,
@@ -42,7 +43,13 @@ const Header = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src={user.profilePic} />
+                <Image
+                  src={user.profilePic}
+                  width={50}
+                  height={50}
+                  alt="profile"
+                  className="object-contain"
+                />
               </div>
             </label>
             <ul
