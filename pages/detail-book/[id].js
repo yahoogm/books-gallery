@@ -8,6 +8,9 @@ import BookDetailContent from '@/components/organisme/BookDetailContent/BookDeta
 import { useEffect, useRef } from 'react';
 import { useReadBook } from '@/config/redux/books/bookSelector.reducer';
 import { toast } from 'react-toastify';
+import DetailReview from '@/components/organisme/DetailReview/DetailReview.organism';
+import { db } from '@/config/firebase/sdk/sdk';
+import { collection, getDocs } from 'firebase/firestore';
 
 const DetailBook = ({ book }) => {
   const dispatch = useDispatch();
@@ -18,11 +21,22 @@ const DetailBook = ({ book }) => {
     const bookId = book.id;
     const industryIdentifiers = book.volumeInfo.industryIdentifiers;
     if (bookId && industryIdentifiers) {
-      dispatch(addReadBook([bookId, 'ISBN:' + industryIdentifiers[0].identifier]));
+      dispatch(
+        addReadBook([bookId, 'ISBN:' + industryIdentifiers[0].identifier])
+      );
     } else {
       dispatch(addReadBook([bookId]));
     }
   }, [book.id, book.volumeInfo.industryIdentifiers, dispatch]);
+
+  useEffect(() => {
+    const getData = async () => {
+      const colRef = collection(db, 'ulasan');
+      const snapshots = await getDocs(colRef);
+      const docs = snapshots.docs.map((doc) => doc.data()); // eslint-disable-line no-unused-vars
+    };
+    getData();
+  }, []);
 
   const alertNotFound = () => {
     toast('Could not embed the book', { type: 'error' });
@@ -39,6 +53,7 @@ const DetailBook = ({ book }) => {
         <title>Detail Book</title>
       </Head>
       <BookDetailContent book={book} showBook={initialize} />
+      <DetailReview />
       <Script
         id="google-books-script"
         src="https://www.google.com/books/jsapi.js"
@@ -49,7 +64,11 @@ const DetailBook = ({ book }) => {
         }}
       />
 
-      <div ref={canvasRef} id="viewerCanvas" className="w-full h-[700px] m-auto"></div>
+      <div
+        ref={canvasRef}
+        id="viewerCanvas"
+        className="w-full h-[700px] m-auto"
+      ></div>
     </HeaderAndFooter>
   );
 };
@@ -60,7 +79,9 @@ export async function getServerSideProps(context) {
   const { params } = context;
   const { id } = params;
 
-  const res = await axios.get(`${process.env.API_URL}/volumes/${id}?=${process.env.API_KEY}`);
+  const res = await axios.get(
+    `${process.env.API_URL}/volumes/${id}?=${process.env.API_KEY}`
+  );
   const book = await res.data;
 
   return {
