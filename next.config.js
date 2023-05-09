@@ -15,6 +15,8 @@ const nextConfig = {
     FIREBASE_APP_ID: process.env.NEXT_FIREBASE_APP_ID,
     FIREBASE_MEASUREMENT_ID: process.env.NEXT_FIREBASE_MEASUREMENT_ID,
   },
+
+  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
 };
 
 module.exports = nextConfig;
