@@ -17,8 +17,9 @@ const FormSignIn = () => {
         const name = result.user.displayName;
         const email = result.user.email;
         const profilePic = result.user.photoURL;
+        const userId = result.user.uid;
 
-        dispatch(loginUser({ name, email, profilePic }));
+        dispatch(loginUser({ name, email, profilePic, userId }));
         router.push('/');
       })
       .catch((error) => {
