@@ -22,7 +22,7 @@ const Header = () => {
     dispatch(logout({}));
     router.push('/');
     toast('Succes logout', { type: 'success' });
-  });
+  }, [dispatch, logout, router]);
 
   return (
     <div className="navbar px-14 py-6">

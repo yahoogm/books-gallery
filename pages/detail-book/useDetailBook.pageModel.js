@@ -22,17 +22,17 @@ export const useDetailBookModel = (book, bookId) => {
     if (isLogin === false) {
       router.push('/sign-in');
     }
-  }, []);
+  }, [isLogin, router]);
 
   // add detail book
   useEffect(() => {
     dispatch(addDetailBook(book));
-  }, [dispatch]);
+  }, [book, dispatch]);
 
   // add reviews
   useEffect(() => {
     dispatch(retrieveReviewBook({ bookId }));
-  }, []);
+  }, [bookId, dispatch]);
 
   // add book id | ISBN
   useEffect(() => {
@@ -50,12 +50,13 @@ export const useDetailBookModel = (book, bookId) => {
   // handle embed book not found
   const alertNotFound = useCallback(async () => {
     toast('Sorry, the book cannot be read', { type: 'error' });
-  });
+  }, []);
 
   // hanlde initialize embed book
   const initialize = useCallback(async () => {
     let viewer = await new google.books.DefaultViewer(canvasRef.current); // eslint-disable-line no-undef
     viewer.load(identifiers, alertNotFound);
-  });
+  }, [alertNotFound, identifiers]);
+
   return { canvasRef, initialize };
 };

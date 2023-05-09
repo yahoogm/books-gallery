@@ -19,7 +19,7 @@ const Modal = ({ btnTitle, modalTitle }) => {
     } catch (e) {
       toast('Failed add review', { type: 'error' });
     }
-  });
+  }, []);
 
   const formik = useFormik({
     initialValues: {
