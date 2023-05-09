@@ -7,12 +7,22 @@ import {
 } from '@/config/redux/user/userSelector.reducer';
 import { logoutUser } from '@/config/redux/user/userSlice.reducer';
 import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
+import { useCallback } from 'react';
+import { toast } from 'react-toastify';
 
 const Header = () => {
   const isLogin = useIsLoginSelector();
   const user = useUserSelector();
   const logout = logoutUser;
   const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleLogout = useCallback(() => {
+    dispatch(logout({}));
+    router.push('/');
+    toast('Succes logout', { type: 'success' });
+  });
 
   return (
     <div className="navbar px-14 py-6">
@@ -56,7 +66,7 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li onClick={() => dispatch(logout({}))}>
+              <li onClick={() => handleLogout()}>
                 <a>Logout</a>
               </li>
             </ul>
