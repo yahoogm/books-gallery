@@ -1,36 +1,54 @@
 import Button from '@/components/atoms/Button/Button.atom';
 import Information from '@/components/atoms/Information/Information.atom';
 import Modal from '@/components/molecules/Modal/Modal.atom';
+import { modifiedName } from '@/config/functions/Functions';
+import { useDetailBook } from '@/config/redux/books/bookSelector.reducer';
 
-const CardInformation = ({ volume, authorsName, categoriesName, showBook }) => {
+const CardInformation = ({ showBook }) => {
+  const detailBook = useDetailBook();
+  const authorsName = modifiedName(detailBook?.volumeInfo.authors);
+  const categoriesName = modifiedName(detailBook?.volumeInfo.categories);
+
   return (
     <div className="grid flex-grow rounded-box shadow-md items-center p-10">
       <div className="space-y-6">
         <h2 className="font-semibold text-2xl">
-          {volume?.title ? volume.title : 'Not found'}
+          {detailBook?.volumeInfo?.title
+            ? detailBook?.volumeInfo?.title
+            : 'Not found'}
         </h2>
         <div className="space-y-2">
           <Information
             title={'Author'}
             information={
-              volume?.authors?.length != null || undefined
+              detailBook?.volumeInfo?.authors?.length != null || undefined
                 ? authorsName
                 : 'Not found'
             }
           />
           <Information
             title={'Publisher'}
-            information={volume?.publisher ? volume.publisher : 'Not Found'}
+            information={
+              detailBook?.volumeInfo?.publisher
+                ? detailBook?.volumeInfo?.publisher
+                : 'Not Found'
+            }
           />
           <Information
             title={'Published Date'}
             information={
-              volume?.publishedDate ? volume.publishedDate : 'Not Found'
+              detailBook?.volumeInfo?.publishedDate
+                ? detailBook?.volumeInfo?.publishedDate
+                : 'Not Found'
             }
           />
           <Information
             title={'Page Count'}
-            information={volume?.pageCount ? volume.pageCount : 'Not Found'}
+            information={
+              detailBook?.volumeInfo?.pageCount
+                ? detailBook?.volumeInfo?.pageCount
+                : 'Not Found'
+            }
           />
           <Information
             title={'Category'}
@@ -38,7 +56,11 @@ const CardInformation = ({ volume, authorsName, categoriesName, showBook }) => {
           />
           <Information
             title={'Description'}
-            information={volume.description ? volume.description : 'Not Found'}
+            information={
+              detailBook?.volumeInfo?.description
+                ? detailBook?.volumeInfo?.description
+                : 'Not Found'
+            }
           />
         </div>
         <div className="space-x-4 flex">
