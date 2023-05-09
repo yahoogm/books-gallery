@@ -1,25 +1,26 @@
 import { HeroImage } from '@/public/assets';
 import Image from 'next/image';
 
-const DetailProfileReview = () => {
+const DetailProfileReview = ({ profileImg, name, date, review }) => {
   return (
-    <>
+    <div className="space-y-4">
       <div className="flex space-x-4 items-center">
         <Image
-          src={HeroImage}
+          src={profileImg}
           alt="profile"
           width={50}
           height={50}
-          className="rounded-full object-cover"
+          className="object-cover w-12 h-12 rounded-full shadow-md"
+          onError={() => HeroImage}
         />
-        <span>Yahoo Garfield Manik</span>
+        <div className="flex flex-col">
+          <span className="font-semibold">{name}</span>
+          <span className="text-xs">{`${date?.seconds}, ${date?.nanoseconds}`}</span>
+        </div>
       </div>
 
-      <div>
-        Buku ini lumayan bagus untuk dibaca dikarenakan alurnya lumayan
-        bagusaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-      </div>
-    </>
+      <div className="mx-16">{review}</div>
+    </div>
   );
 };
 
