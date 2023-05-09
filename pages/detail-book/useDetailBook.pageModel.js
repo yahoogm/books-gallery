@@ -17,7 +17,7 @@ export const useDetailBookModel = (book, bookId) => {
   const canvasRef = useRef();
   const router = useRouter();
 
-  //   check user isLogin
+  // check user isLogin
   useEffect(() => {
     if (isLogin === false) {
       router.push('/sign-in');
@@ -29,12 +29,12 @@ export const useDetailBookModel = (book, bookId) => {
     dispatch(addDetailBook(book));
   }, [dispatch]);
 
-  // get reviews
+  // add reviews
   useEffect(() => {
     dispatch(retrieveReviewBook({ bookId }));
   }, []);
 
-  //  add book id | ISBN
+  // add book id | ISBN
   useEffect(() => {
     const bookId = book.id;
     const industryIdentifiers = book.volumeInfo.industryIdentifiers;
@@ -47,12 +47,12 @@ export const useDetailBookModel = (book, bookId) => {
     }
   }, [book.id, book.volumeInfo.industryIdentifiers, dispatch]);
 
-  //   handle embed book not found
+  // handle embed book not found
   const alertNotFound = useCallback(async () => {
     toast('Sorry, the book cannot be read', { type: 'error' });
   });
 
-  //   hanlde initialize embed book
+  // hanlde initialize embed book
   const initialize = useCallback(async () => {
     let viewer = await new google.books.DefaultViewer(canvasRef.current); // eslint-disable-line no-undef
     viewer.load(identifiers, alertNotFound);
