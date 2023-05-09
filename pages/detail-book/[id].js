@@ -1,58 +1,22 @@
 import HeaderAndFooter from '@/components/templates/HeaderAndFooter/HeaderAndFooter.template';
 import Head from 'next/head';
 import axios from 'axios';
-import { addReadBook } from '@/config/redux/books/bookSlice.reducer';
-import { useDispatch } from 'react-redux';
 import Script from 'next/script';
 import BookDetailContent from '@/components/organisme/BookDetailContent/BookDetailContent.organism';
-import { useEffect, useRef } from 'react';
-import { useReadBook } from '@/config/redux/books/bookSelector.reducer';
-import { toast } from 'react-toastify';
 import DetailReview from '@/components/organisme/DetailReview/DetailReview.organism';
-import { db } from '@/config/firebase/sdk/sdk';
-import { collection, getDocs } from 'firebase/firestore';
+import { useDetailBookModel } from './useDetailBook.pageModel';
 
 const DetailBook = ({ book }) => {
-  const dispatch = useDispatch();
-  const identifiers = useReadBook();
-  const canvasRef = useRef();
+  const bookId = book.id;
 
-  useEffect(() => {
-    const bookId = book.id;
-    const industryIdentifiers = book.volumeInfo.industryIdentifiers;
-    if (bookId && industryIdentifiers) {
-      dispatch(
-        addReadBook([bookId, 'ISBN:' + industryIdentifiers[0].identifier])
-      );
-    } else {
-      dispatch(addReadBook([bookId]));
-    }
-  }, [book.id, book.volumeInfo.industryIdentifiers, dispatch]);
-
-  useEffect(() => {
-    const getData = async () => {
-      const colRef = collection(db, 'ulasan');
-      const snapshots = await getDocs(colRef);
-      const docs = snapshots.docs.map((doc) => doc.data()); // eslint-disable-line no-unused-vars
-    };
-    getData();
-  }, []);
-
-  const alertNotFound = () => {
-    toast('Could not embed the book', { type: 'error' });
-  };
-
-  const initialize = () => {
-    let viewer = new google.books.DefaultViewer(canvasRef.current); // eslint-disable-line no-undef
-    viewer.load(identifiers, alertNotFound);
-  };
+  const model = useDetailBookModel(book, bookId);
 
   return (
     <HeaderAndFooter>
       <Head>
         <title>Detail Book</title>
       </Head>
-      <BookDetailContent book={book} showBook={initialize} />
+      <BookDetailContent showBook={model.initialize} />
       <DetailReview />
       <Script
         id="google-books-script"
@@ -60,12 +24,12 @@ const DetailBook = ({ book }) => {
         strategy="afterInteractive"
         onLoad={() => {
           google.books.load(); // eslint-disable-line no-undef
-          google.books.setOnLoadCallback(() => initialize); // eslint-disable-line no-undef
+          google.books.setOnLoadCallback(() => model.initialize); // eslint-disable-line no-undef
         }}
       />
 
       <div
-        ref={canvasRef}
+        ref={model.canvasRef}
         id="viewerCanvas"
         className="w-full h-[700px] m-auto"
       ></div>
