@@ -4,7 +4,7 @@ import axios from 'axios';
 import Script from 'next/script';
 import BookDetailContent from '@/components/organisme/BookDetailContent/BookDetailContent.organism';
 import DetailReview from '@/components/organisme/DetailReview/DetailReview.organism';
-import { useDetailBookModel } from './useDetailBook.pageModel';
+import { useDetailBookModel } from './useDetailBook';
 
 const DetailBook = ({ book }) => {
   const bookId = book.id;
