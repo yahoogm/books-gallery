@@ -1,6 +1,6 @@
 import Button from '@/components/atoms/Button/Button.atom';
 import Information from '@/components/atoms/Information/Information.atom';
-import Modal from '@/components/molecules/Modal/Modal.atom';
+import ModalReview from '@/components/molecules/ModalReview/ModalReview.atom';
 import { modifiedName } from '@/config/functions/Functions';
 import { useDetailBook } from '@/config/redux/books/bookSelector.reducer';
 
@@ -71,7 +71,7 @@ const CardInformation = ({ showBook }) => {
             onClick={() => showBook()}
           />
 
-          <Modal btnTitle={'add review'} modalTitle={'make review'} />
+          <ModalReview btnTitle={'add review'} modalTitle={'make review'} />
         </div>
       </div>
     </div>
