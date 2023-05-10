@@ -6,6 +6,7 @@ const initialState = {
   readBook: [],
   reviewBook: [],
   detailBook: null,
+  reviewId: '',
 
   type: '',
 };
@@ -32,6 +33,13 @@ export const searchSlice = createSlice({
       return {
         ...state,
         reviewBook: action.payload,
+      };
+    },
+
+    addReviewId: (state, action) => {
+      return {
+        ...state,
+        reviewId: action.payload,
       };
     },
   },
@@ -62,5 +70,6 @@ export const searchSlice = createSlice({
 });
 
 const { actions, reducer: searchReducer } = searchSlice;
-export const { addDetailBook, addReadBook, addReviewBook } = actions;
+export const { addDetailBook, addReadBook, addReviewBook, addReviewId } =
+  actions;
 export default searchReducer;
