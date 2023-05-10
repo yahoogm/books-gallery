@@ -18,18 +18,22 @@ const Modal = ({ btnTitle, modalTitle }) => {
           >
             ✕
           </label>
-          <div className="flex flex-col space-y-4">
-            <h3 className="text-lg font-bold uppercase">{modalTitle}</h3>
-            <textarea
-              className="textarea textarea-bordered"
-              placeholder="Write something about this book"
-              name="review"
-              value={model.formik.values.review}
-              onChange={model.formik.handleChange}
-            ></textarea>
-            {model.formik.touched.review && model.formik.errors.review ? (
-              <div className="text-error">{model.formik.errors.review}</div>
-            ) : null}
+
+          <h3 className="text-lg font-bold uppercase">{modalTitle}</h3>
+
+          <textarea
+            className="textarea textarea-bordered w-full mt-4"
+            placeholder="Write something about this book"
+            name="review"
+            value={model.formik.values.review}
+            onChange={model.formik.handleChange}
+          ></textarea>
+
+          {model.formik.touched.review && model.formik.errors.review ? (
+            <div className="text-error">{model.formik.errors.review}</div>
+          ) : null}
+
+          <div className="modal-action">
             <Button
               type={'submit'}
               text={'submit'}
