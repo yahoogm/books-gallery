@@ -1,14 +1,16 @@
 import { useIsLoginSelector } from '@/config/redux/user/userSelector.reducer';
 import { useRouter } from 'next/router';
-import { retrieveReviewBook } from '@/config/redux/books/bookThunk.reducer';
 import { useCallback, useEffect, useRef } from 'react';
 import { useReadBook } from '@/config/redux/books/bookSelector.reducer';
 import {
   addDetailBook,
   addReadBook,
+  addReviewBook,
 } from '@/config/redux/books/bookSlice.reducer';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
+import { db } from '@/config/firebase/sdk/sdk';
+import { collection, onSnapshot } from 'firebase/firestore';
 
 export const useDetailBookModel = (book, bookId) => {
   const dispatch = useDispatch();
@@ -29,10 +31,20 @@ export const useDetailBookModel = (book, bookId) => {
     dispatch(addDetailBook(book));
   }, [book, dispatch]);
 
-  // add reviews
+  // get reviews collection from firestore with realtime
+  const dbRef = collection(db, 'ulasan');
   useEffect(() => {
-    dispatch(retrieveReviewBook({ bookId }));
-  }, [bookId, dispatch]);
+    onSnapshot(dbRef, (docSnap) => {
+      const reviews = [];
+      docSnap.forEach((doc) => {
+        reviews.push(doc.data());
+      });
+      const filteringBooks = reviews.filter(
+        (review) => review.bookId === bookId
+      );
+      dispatch(addReviewBook(filteringBooks));
+    });
+  }, [bookId, dbRef, dispatch]);
 
   // add book id | ISBN
   useEffect(() => {
