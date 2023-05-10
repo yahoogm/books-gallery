@@ -31,18 +31,21 @@ const useDetailReviewModel = () => {
     });
   };
 
-  const updateReviewByIdCollection = useCallback((ulasan, updatedAt) => {
-    try {
-      const docRef = doc(db, 'ulasan', reviewId);
-      updateDoc(docRef, {
-        ulasan,
-        updatedAt,
-      });
-      toast('Succes update review', { type: 'success' });
-    } catch (error) {
-      toast('Failed update review', { type: 'error' });
-    }
-  });
+  const updateReviewByIdCollection = useCallback(
+    (ulasan, updatedAt) => {
+      try {
+        const docRef = doc(db, 'ulasan', reviewId);
+        updateDoc(docRef, {
+          ulasan,
+          updatedAt,
+        });
+        toast('Succes update review', { type: 'success' });
+      } catch (error) {
+        toast('Failed update review', { type: 'error' });
+      }
+    },
+    [reviewId]
+  );
 
   const formik = useFormik({
     initialValues: {

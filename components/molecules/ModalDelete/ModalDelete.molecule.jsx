@@ -14,7 +14,7 @@ const ModalDelete = ({ children }) => {
     } catch (error) {
       toast('Failed delete review', { type: 'error' });
     }
-  });
+  }, [reviewId]);
 
   return (
     <>
