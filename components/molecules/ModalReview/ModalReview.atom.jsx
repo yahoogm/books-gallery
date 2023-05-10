@@ -1,5 +1,5 @@
 import Button from '@/components/atoms/Button/Button.atom';
-import useModalModel from './Modal.atomModel';
+import useModalModel from './ModalReview.atomModel';
 
 const Modal = ({ btnTitle, modalTitle }) => {
   const model = useModalModel();
@@ -14,7 +14,7 @@ const Modal = ({ btnTitle, modalTitle }) => {
         <div className="modal-box relative">
           <label
             htmlFor="my-modal-3"
-            className="btn btn-sm btn-circle btn-error text-white absolute right-2 top-2"
+            className="btn btn-sm btn-circle  absolute right-2 top-2"
           >
             ✕
           </label>
@@ -28,7 +28,7 @@ const Modal = ({ btnTitle, modalTitle }) => {
               onChange={model.formik.handleChange}
             ></textarea>
             {model.formik.touched.review && model.formik.errors.review ? (
-              <div>{model.formik.errors.review}</div>
+              <div className="text-error">{model.formik.errors.review}</div>
             ) : null}
             <Button
               type={'submit'}

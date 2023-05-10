@@ -26,7 +26,7 @@ const useModalModel = () => {
       review: '',
     },
     validationSchema: Yup.object({
-      review: Yup.string().required('Required'),
+      review: Yup.string().required('Please insert your review'),
     }),
     onSubmit: (values) => {
       addReview({
