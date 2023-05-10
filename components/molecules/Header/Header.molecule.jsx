@@ -1,17 +1,28 @@
 import Title from '@/components/atoms/Title/Title.atom';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   useIsLoginSelector,
   useUserSelector,
 } from '@/config/redux/user/userSelector.reducer';
 import { logoutUser } from '@/config/redux/user/userSlice.reducer';
 import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
+import { useCallback } from 'react';
+import { toast } from 'react-toastify';
 
 const Header = () => {
   const isLogin = useIsLoginSelector();
   const user = useUserSelector();
   const logout = logoutUser;
   const dispatch = useDispatch();
+  const router = useRouter();
+
+  const handleLogout = useCallback(() => {
+    dispatch(logout({}));
+    router.push('/');
+    toast('Succes logout', { type: 'success' });
+  }, [dispatch, logout, router]);
 
   return (
     <div className="navbar px-14 py-6">
@@ -42,14 +53,20 @@ const Header = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src={user.profilePic} />
+                <Image
+                  src={user.profilePic}
+                  width={50}
+                  height={50}
+                  alt="profile"
+                  className="object-contain"
+                />
               </div>
             </label>
             <ul
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li onClick={() => dispatch(logout({}))}>
+              <li onClick={() => handleLogout()}>
                 <a>Logout</a>
               </li>
             </ul>
