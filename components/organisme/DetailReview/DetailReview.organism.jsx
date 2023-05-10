@@ -1,9 +1,23 @@
 import DetailProfileReview from '@/components/molecules/DetailProfileReview/DetailProfileReview.molecules';
 import { useReviewBookSelector } from '@/config/redux/books/bookSelector.reducer';
 import { FaEdit, FaTrash } from 'react-icons/fa';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { db } from '@/config/firebase/sdk/sdk';
+import ModalConfirmation from '@/components/molecules/ModalConfirmation/ModalConfirmation.molecule';
+import { useDispatch } from 'react-redux';
+import { addReviewId } from '@/config/redux/books/bookSlice.reducer';
 
 const DetailReview = () => {
   const reviews = useReviewBookSelector();
+  const dispatch = useDispatch();
+
+  const getIdDocumentFromFirestore = async (id) => {
+    const q = query(collection(db, 'ulasan'), where('id', '==', id));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      dispatch(addReviewId(doc.id));
+    });
+  };
 
   return (
     <div className="space-y-4">
@@ -24,14 +38,20 @@ const DetailReview = () => {
                   </div>
 
                   <div className="flex space-x-2 items-center justify-end">
-                    <FaEdit
-                      size={25}
-                      className="text-accent hover:text-accent-focus cursor-pointer transition duration-300 ease-out"
-                    />
-                    <FaTrash
-                      size={22}
-                      className="text-error hover:text-red-500 cursor-pointer transition duration-300 ease-out"
-                    />
+                    <ModalConfirmation>
+                      <FaEdit
+                        size={25}
+                        className="text-accent hover:text-accent-focus cursor-pointer transition duration-300 ease-out"
+                      />
+                    </ModalConfirmation>
+
+                    <ModalConfirmation>
+                      <FaTrash
+                        size={22}
+                        className="text-error hover:text-red-500 cursor-pointer transition duration-300 ease-out"
+                        onClick={() => getIdDocumentFromFirestore(review.id)}
+                      />
+                    </ModalConfirmation>
                   </div>
                 </div>
 
