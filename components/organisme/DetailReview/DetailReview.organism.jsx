@@ -3,7 +3,7 @@ import { useReviewBookSelector } from '@/config/redux/books/bookSelector.reducer
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '@/config/firebase/sdk/sdk';
-import ModalConfirmation from '@/components/molecules/ModalConfirmation/ModalConfirmation.molecule';
+import ModalDelete from '@/components/molecules/ModalDelete/ModalDelete.molecule';
 import { useDispatch } from 'react-redux';
 import { addReviewId } from '@/config/redux/books/bookSlice.reducer';
 
@@ -38,20 +38,18 @@ const DetailReview = () => {
                   </div>
 
                   <div className="flex space-x-2 items-center justify-end">
-                    <ModalConfirmation>
-                      <FaEdit
-                        size={25}
-                        className="text-accent hover:text-accent-focus cursor-pointer transition duration-300 ease-out"
-                      />
-                    </ModalConfirmation>
+                    <FaEdit
+                      size={25}
+                      className="text-accent hover:text-accent-focus cursor-pointer transition duration-300 ease-out"
+                    />
 
-                    <ModalConfirmation>
+                    <ModalDelete>
                       <FaTrash
                         size={22}
                         className="text-error hover:text-red-500 cursor-pointer transition duration-300 ease-out"
                         onClick={() => getIdDocumentFromFirestore(review.id)}
                       />
-                    </ModalConfirmation>
+                    </ModalDelete>
                   </div>
                 </div>
 
