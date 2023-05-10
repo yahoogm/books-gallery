@@ -71,7 +71,7 @@ const CardInformation = ({ showBook }) => {
             onClick={() => showBook()}
           />
 
-          <ModalReview btnTitle={'add review'} modalTitle={'make review'} />
+          <ModalReview btnTitle={'add review'} modalTitle={'add review'} />
         </div>
       </div>
     </div>

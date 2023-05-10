@@ -1,12 +1,20 @@
 import { useReviewIdSelector } from '@/config/redux/books/bookSelector.reducer';
 import { doc, deleteDoc } from 'firebase/firestore';
 import { db } from '@/config/firebase/sdk/sdk';
+import { useCallback } from 'react';
+import { toast } from 'react-toastify';
 
 const ModalDelete = ({ children }) => {
   const reviewId = useReviewIdSelector();
-  const handleDeleteReviewById = async () => {
-    await deleteDoc(doc(db, 'ulasan', reviewId));
-  };
+
+  const handleDeleteReviewById = useCallback(() => {
+    try {
+      deleteDoc(doc(db, 'ulasan', reviewId));
+      toast('Success delete review', { type: 'success' });
+    } catch (error) {
+      toast('Failed delete review', { type: 'error' });
+    }
+  });
 
   return (
     <>
