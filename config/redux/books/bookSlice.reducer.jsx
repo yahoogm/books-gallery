@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { retrieveReviewBook, retrieveSearchBooks } from './bookThunk.reducer';
+import { retrieveSearchBooks } from './bookThunk.reducer';
 
 const initialState = {
   books: [],
@@ -8,7 +8,6 @@ const initialState = {
   detailBook: null,
 
   type: '',
-  reviewType: '',
 };
 
 export const searchSlice = createSlice({
@@ -26,6 +25,13 @@ export const searchSlice = createSlice({
       return {
         ...state,
         readBook: action.payload,
+      };
+    },
+
+    addReviewBook: (state, action) => {
+      return {
+        ...state,
+        reviewBook: action.payload,
       };
     },
   },
@@ -50,33 +56,11 @@ export const searchSlice = createSlice({
           ...state,
           type: action.type,
         };
-      })
-      //#endregion retrieve search
-
-      //#region retrieve review book
-      .addCase(retrieveReviewBook.pending, (state, action) => {
-        return {
-          ...state,
-          reviewType: action.type,
-        };
-      })
-      .addCase(retrieveReviewBook.fulfilled, (state, action) => {
-        return {
-          ...state,
-          reviewBook: action.payload,
-          reviewType: action.type,
-        };
-      })
-      .addCase(retrieveReviewBook.rejected, (state, action) => {
-        return {
-          ...state,
-          reviewType: action.type,
-        };
       });
-    //#endregion retrieve review book
+    //#endregion retrieve search
   },
 });
 
 const { actions, reducer: searchReducer } = searchSlice;
-export const { addDetailBook, addReadBook } = actions;
+export const { addDetailBook, addReadBook, addReviewBook } = actions;
 export default searchReducer;
