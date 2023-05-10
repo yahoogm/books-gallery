@@ -20,6 +20,7 @@ const FormSignIn = () => {
         const userId = result.user.uid;
 
         dispatch(loginUser({ name, email, profilePic, userId }));
+        toast(`Welcome ${name}`, { type: 'success' });
         router.push('/');
       })
       .catch((error) => {
