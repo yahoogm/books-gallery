@@ -13,6 +13,3 @@ export const useReadBook = () => useSelector((state) => state.book.readBook);
 
 export const useReviewBookSelector = () =>
   useSelector((state) => state.book.reviewBook);
-
-export const useReviewTypeSelector = () =>
-  useSelector((state) => state.book.reviewType);
