@@ -2,7 +2,7 @@ import { useReviewIdSelector } from '@/config/redux/books/bookSelector.reducer';
 import { doc, deleteDoc } from 'firebase/firestore';
 import { db } from '@/config/firebase/sdk/sdk';
 
-const ModalConfirmation = ({ children }) => {
+const ModalDelete = ({ children }) => {
   const reviewId = useReviewIdSelector();
   const handleDeleteReviewById = async () => {
     await deleteDoc(doc(db, 'ulasan', reviewId));
@@ -34,4 +34,4 @@ const ModalConfirmation = ({ children }) => {
   );
 };
 
-export default ModalConfirmation;
+export default ModalDelete;
