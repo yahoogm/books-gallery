@@ -3,9 +3,11 @@ import { FaEdit, FaTrash } from 'react-icons/fa';
 import ModalDelete from '@/components/molecules/ModalDelete/ModalDelete.molecule';
 import ModalUpdate from '@/components/molecules/ModalUpdate/ModalUpdate.molecule';
 import useDetailReviewModel from './DetailReview.organismModel';
+import { useUserSelector } from '@/config/redux/user/userSelector.reducer';
 
 const DetailReview = () => {
   const model = useDetailReviewModel();
+  const user = useUserSelector();
 
   return (
     <div className="space-y-4">
@@ -25,29 +27,31 @@ const DetailReview = () => {
                     />
                   </div>
 
-                  <div className="flex space-x-2 items-center justify-end">
-                    <ModalUpdate formik={model.formik}>
-                      <FaEdit
-                        size={25}
-                        className="text-accent hover:text-accent-focus cursor-pointer transition duration-300 ease-out"
-                        onClick={() => {
-                          model.getIdDocumentFromFirestore(review.id);
+                  {user?.userId === review?.userId ? (
+                    <div className="flex space-x-2 items-center justify-end">
+                      <ModalUpdate formik={model.formik}>
+                        <FaEdit
+                          size={25}
+                          className="text-accent hover:text-accent-focus cursor-pointer transition duration-300 ease-out"
+                          onClick={() => {
+                            model.getIdDocumentFromFirestore(review.id);
 
-                          model.formik.setValues({ review: review.ulasan });
-                        }}
-                      />
-                    </ModalUpdate>
+                            model.formik.setValues({ review: review.ulasan });
+                          }}
+                        />
+                      </ModalUpdate>
 
-                    <ModalDelete>
-                      <FaTrash
-                        size={22}
-                        className="text-error hover:text-red-500 cursor-pointer transition duration-300 ease-out"
-                        onClick={() =>
-                          model.getIdDocumentFromFirestore(review.id)
-                        }
-                      />
-                    </ModalDelete>
-                  </div>
+                      <ModalDelete>
+                        <FaTrash
+                          size={22}
+                          className="text-error hover:text-red-500 cursor-pointer transition duration-300 ease-out"
+                          onClick={() =>
+                            model.getIdDocumentFromFirestore(review.id)
+                          }
+                        />
+                      </ModalDelete>
+                    </div>
+                  ) : null}
                 </div>
 
                 <div className="w-full h-1 bg-[#D0BCFF] rounded-2xl mt-4"></div>
