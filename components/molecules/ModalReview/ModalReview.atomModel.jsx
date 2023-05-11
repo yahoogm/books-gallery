@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '@/config/firebase/sdk/sdk';
 import { useDetailBook } from '@/config/redux/books/bookSelector.reducer';
@@ -11,6 +11,7 @@ import * as Yup from 'yup';
 const useModalModel = () => {
   const detailBook = useDetailBook();
   const user = useUserSelector();
+  const [isOpen, setIsOpen] = useState(false);
 
   const addReview = useCallback((review) => {
     try {
@@ -29,21 +30,26 @@ const useModalModel = () => {
       review: Yup.string().required('Please insert your review'),
     }),
     onSubmit: (values) => {
+      const date = new Date();
+      const id = nanoid();
       addReview({
         userName: user.name,
         bookId: detailBook.id,
         profilePic: user.profilePic,
-        id: nanoid(),
+        id: id,
         ulasan: values.review,
         userId: user.userId,
-        createdAt: new Date(),
+        createdAt: date,
+        updatedAt: date,
       });
+
+      setIsOpen(false);
 
       formik.resetForm();
     },
   });
 
-  return { formik };
+  return { formik, isOpen, setIsOpen };
 };
 
 export default useModalModel;

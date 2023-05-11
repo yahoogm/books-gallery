@@ -10,6 +10,9 @@ import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { useCallback } from 'react';
 import { toast } from 'react-toastify';
+import { auth } from '@/config/firebase/sdk/sdk';
+import { signOut } from 'firebase/auth';
+import Button from '@/components/atoms/Button/Button.atom';
 
 const Header = () => {
   const isLogin = useIsLoginSelector();
@@ -19,9 +22,15 @@ const Header = () => {
   const router = useRouter();
 
   const handleLogout = useCallback(() => {
-    dispatch(logout({}));
-    router.push('/');
-    toast('Succes logout', { type: 'success' });
+    signOut(auth)
+      .then(() => {
+        dispatch(logout({}));
+        router.push('/');
+        toast('Succes logout', { type: 'success' });
+      })
+      .catch((e) => {
+        toast(e, { type: 'error' });
+      });
   }, [dispatch, logout, router]);
 
   return (
@@ -30,10 +39,6 @@ const Header = () => {
         <Link href="/" className="normal-case">
           <Title />
         </Link>
-
-        <a href="#" className="text-black font-semibold">
-          About
-        </a>
       </div>
 
       {isLogin !== true ? (
@@ -66,8 +71,12 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li onClick={() => handleLogout()}>
-                <a>Logout</a>
+              <li>
+                <Button
+                  onClick={() => handleLogout()}
+                  text={'logout'}
+                  variant={'btn-error text-white hover:bg-red-500'}
+                />
               </li>
             </ul>
           </div>

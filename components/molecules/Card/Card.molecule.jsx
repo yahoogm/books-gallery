@@ -4,7 +4,14 @@ import { HeroImage } from '@/public/assets';
 import { useRouter } from 'next/router';
 import { modifiedName } from '@/config/functions/Functions';
 
-const Card = ({ id, title = 'Not found', authors = ['Not found'], publisher = 'Not found', publishedDate = 'Not found', cover = HeroImage }) => {
+const Card = ({
+  id,
+  title = 'Not found',
+  authors = ['Not found'],
+  publisher = 'Not found',
+  publishedDate = 'Not found',
+  cover = HeroImage,
+}) => {
   // router
   const router = useRouter();
   const authorsName = modifiedName(authors);
@@ -12,7 +19,15 @@ const Card = ({ id, title = 'Not found', authors = ['Not found'], publisher = 'N
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
-        <Image src={cover} alt="Shoes" width={500} height={300} priority={true} className="object-fill w-full h-48" onError={HeroImage} />
+        <Image
+          src={cover}
+          alt="Shoes"
+          width={500}
+          height={300}
+          priority={true}
+          className="object-fill w-full h-48"
+          onError={HeroImage}
+        />
       </figure>
       <div className="card-body">
         <h2 className="card-title line-clamp-1">{title}</h2>
@@ -20,7 +35,9 @@ const Card = ({ id, title = 'Not found', authors = ['Not found'], publisher = 'N
         <div className="grid grid-cols-5 space-x-2">
           <span className="col-span-1">Author :</span>
 
-          <span className="truncate col-span-4 space-x-2">{authors.length != null || undefined ? authorsName : 'null'}</span>
+          <span className="truncate col-span-4 space-x-2">
+            {authors.length != null || undefined ? authorsName : 'null'}
+          </span>
         </div>
 
         <div className="grid grid-cols-3 space-x-2">
@@ -34,7 +51,11 @@ const Card = ({ id, title = 'Not found', authors = ['Not found'], publisher = 'N
         </div>
 
         <div className="card-actions justify-end">
-          <Button text={'Detail'} variant={'btn-primary'} onClick={() => router.push(`/detail-book/${id}`)} />
+          <Button
+            text={'Detail'}
+            variant={'btn-primary'}
+            onClick={() => router.push(`/detail-book/${id}`)}
+          />
         </div>
       </div>
     </div>

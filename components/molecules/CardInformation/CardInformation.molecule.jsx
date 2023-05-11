@@ -3,6 +3,7 @@ import Information from '@/components/atoms/Information/Information.atom';
 import ModalReview from '@/components/molecules/ModalReview/ModalReview.atom';
 import { modifiedName } from '@/config/functions/Functions';
 import { useDetailBook } from '@/config/redux/books/bookSelector.reducer';
+import { Link } from 'react-scroll';
 
 const CardInformation = ({ showBook }) => {
   const detailBook = useDetailBook();
@@ -64,14 +65,23 @@ const CardInformation = ({ showBook }) => {
           />
         </div>
         <div className="space-x-4 flex">
-          <Button
-            text={'read book'}
-            type={'button'}
-            variant={'btn-primary'}
-            onClick={() => showBook()}
-          />
+          <Link
+            activeClass="active"
+            to="readBook"
+            spy={true}
+            smooth={true}
+            offset={-55}
+            duration={500}
+          >
+            <Button
+              text={'read book'}
+              type={'button'}
+              variant={'btn-primary'}
+              onClick={() => showBook()}
+            />
+          </Link>
 
-          <ModalReview btnTitle={'add review'} modalTitle={'make review'} />
+          <ModalReview btnTitle={'add review'} modalTitle={'add review'} />
         </div>
       </div>
     </div>
