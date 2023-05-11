@@ -20,7 +20,7 @@ const CardImage = () => {
           fill
           sizes={'100vh'}
           alt={'Detail Book'}
-          className="rounded-2xl shadow-md object-cover"
+          className="rounded-2xl shadow-md object-contain"
           onError={() => HeroImage}
         />
       </div>
