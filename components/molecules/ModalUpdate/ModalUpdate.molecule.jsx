@@ -12,6 +12,7 @@ const ModalUpdate = ({ children, formik, isOpen, setIsOpen }) => {
         id="modal-update"
         className="modal-toggle"
         checked={isOpen}
+        onChange={() => setIsOpen(isOpen)}
       />
       <div className="modal">
         <label className="modal-box relative" htmlFor="">

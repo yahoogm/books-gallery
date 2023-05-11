@@ -3,6 +3,7 @@ import useModalModel from './ModalReview.atomModel';
 
 const Modal = ({ btnTitle, modalTitle }) => {
   const model = useModalModel();
+
   return (
     <form onSubmit={model.formik.handleSubmit}>
       <label
@@ -18,6 +19,7 @@ const Modal = ({ btnTitle, modalTitle }) => {
         id="my-modal-3"
         className="modal-toggle"
         checked={model.isOpen}
+        onChange={() => model.setIsOpen(model.isOpen)}
       />
       <div className="modal">
         <div className="modal-box relative">
