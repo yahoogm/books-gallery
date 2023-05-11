@@ -13,7 +13,7 @@ const useCardContentOrganismModel = () => {
 
   useEffect(() => {
     dispatch(retrieveSearchBooks({ search: 'programming' }));
-  }, []);
+  }, [dispatch]);
 
   const loading = type === retrieveSearchBooks.pending.type;
 
