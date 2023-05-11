@@ -17,6 +17,22 @@ const nextConfig = {
   },
 
   pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
+
+  redirects: async () => {
+    return [
+      {
+        source: '/sign-in',
+        destination: '/',
+        permanent: true,
+      },
+
+      {
+        source: '/detail-book/:id',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
