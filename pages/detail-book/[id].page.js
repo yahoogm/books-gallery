@@ -5,6 +5,7 @@ import Script from 'next/script';
 import BookDetailContent from '@/components/organisme/BookDetailContent/BookDetailContent.organism';
 import DetailReview from '@/components/organisme/DetailReview/DetailReview.organism';
 import { useDetailBookModel } from './useDetailBook';
+import { Element } from 'react-scroll';
 
 const DetailBook = ({ book }) => {
   const bookId = book.id;
@@ -28,11 +29,16 @@ const DetailBook = ({ book }) => {
         }}
       />
 
-      <div
-        ref={model.canvasRef}
-        id="viewerCanvas"
-        className="w-full h-[700px] m-auto"
-      ></div>
+      <div className="space-y-6" id="containerReadBook">
+        <h1 className="text-3xl font-semibold">Read Book</h1>
+        <Element name="readBook" className="element">
+          <div
+            ref={model.canvasRef}
+            id="viewerCanvas"
+            className="w-full h-[700px] m-auto"
+          ></div>
+        </Element>
+      </div>
     </HeaderAndFooter>
   );
 };
