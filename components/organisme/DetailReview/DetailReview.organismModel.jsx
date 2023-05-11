@@ -15,13 +15,15 @@ import { useDispatch } from 'react-redux';
 import { addReviewId } from '@/config/redux/books/bookSlice.reducer';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { toast } from 'react-toastify';
 
 const useDetailReviewModel = () => {
   const reviews = useReviewBookSelector();
   const reviewId = useReviewIdSelector();
   const dispatch = useDispatch();
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const getIdDocumentFromFirestore = async (id) => {
     const q = query(collection(db, 'ulasan'), where('id', '==', id));
@@ -58,10 +60,11 @@ const useDetailReviewModel = () => {
       const updatedAt = new Date();
       updateReviewByIdCollection(values.review, updatedAt);
       formik.resetForm();
+      setIsOpen(false);
     },
   });
 
-  return { reviews, formik, getIdDocumentFromFirestore };
+  return { reviews, formik, isOpen, setIsOpen, getIdDocumentFromFirestore };
 };
 
 export default useDetailReviewModel;

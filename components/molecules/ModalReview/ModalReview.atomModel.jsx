@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '@/config/firebase/sdk/sdk';
 import { useDetailBook } from '@/config/redux/books/bookSelector.reducer';
@@ -11,6 +11,7 @@ import * as Yup from 'yup';
 const useModalModel = () => {
   const detailBook = useDetailBook();
   const user = useUserSelector();
+  const [isOpen, setIsOpen] = useState(false);
 
   const addReview = useCallback((review) => {
     try {
@@ -42,11 +43,13 @@ const useModalModel = () => {
         updatedAt: date,
       });
 
+      setIsOpen(false);
+
       formik.resetForm();
     },
   });
 
-  return { formik };
+  return { formik, isOpen, setIsOpen };
 };
 
 export default useModalModel;

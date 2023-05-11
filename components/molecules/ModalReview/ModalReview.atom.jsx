@@ -5,16 +5,26 @@ const Modal = ({ btnTitle, modalTitle }) => {
   const model = useModalModel();
   return (
     <form onSubmit={model.formik.handleSubmit}>
-      <label htmlFor="my-modal-3" className="btn btn-primary">
+      <label
+        htmlFor="my-modal-3"
+        className="btn btn-primary"
+        onClick={() => model.setIsOpen(true)}
+      >
         {btnTitle}
       </label>
 
-      <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+      <input
+        type="checkbox"
+        id="my-modal-3"
+        className="modal-toggle"
+        checked={model.isOpen}
+      />
       <div className="modal">
         <div className="modal-box relative">
           <label
             htmlFor="my-modal-3"
             className="btn btn-sm btn-circle  absolute right-2 top-2"
+            onClick={() => model.setIsOpen(false)}
           >
             ✕
           </label>
@@ -37,7 +47,7 @@ const Modal = ({ btnTitle, modalTitle }) => {
             <Button
               type={'submit'}
               text={'submit'}
-              variant={'btn-success text-white'}
+              variant={'btn-accent text-white'}
             />
           </div>
         </div>

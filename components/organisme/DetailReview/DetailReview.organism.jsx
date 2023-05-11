@@ -29,7 +29,11 @@ const DetailReview = () => {
 
                   {user?.userId === review?.userId ? (
                     <div className="flex space-x-2 items-center justify-end">
-                      <ModalUpdate formik={model.formik}>
+                      <ModalUpdate
+                        formik={model.formik}
+                        isOpen={model.isOpen}
+                        setIsOpen={model.setIsOpen}
+                      >
                         <FaEdit
                           size={25}
                           className="text-accent hover:text-accent-focus cursor-pointer transition duration-300 ease-out"
