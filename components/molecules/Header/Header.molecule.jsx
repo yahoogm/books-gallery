@@ -39,10 +39,6 @@ const Header = () => {
         <Link href="/" className="normal-case">
           <Title />
         </Link>
-
-        <a href="#" className="text-black font-semibold">
-          About
-        </a>
       </div>
 
       {isLogin !== true ? (

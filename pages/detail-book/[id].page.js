@@ -48,7 +48,6 @@ export default DetailBook;
 export async function getServerSideProps(context) {
   const { params } = context;
   const { id } = params;
-
   const res = await axios.get(
     `${process.env.API_URL}/volumes/${id}?=${process.env.API_KEY}`
   );
