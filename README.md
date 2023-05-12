@@ -11,14 +11,14 @@ This website-based book gallery application was built to make it easier for peop
 
 # Build With
 
-- <a href="https://nextjs.org/docs" target="_blank"><img alt="NextJs" src="https://img.shields.io/badge/NextJS-white.svg?logo=next.js&logoColor=black">
-  </a>
-- <a href="https://firebase.google.com" target="_blank"><img alt="Firebase" src="https://img.shields.io/badge/Firebase-blue.svg?logo=firebase&logoColor=orange">
-  </a>
-- <a href="https://developers.google.com/books" target="_blank"><img alt="Firebase" src="https://img.shields.io/badge/Books%20API-success.svg?logo=google&logoColor=informational">
-  </a>
-- <a href="https://redux-toolkit.js.org/introduction/getting-started" target="_blank"><img alt="Firebase" src="https://img.shields.io/badge/Redux%20Toolkit-black.svg?logo=redux&logoColor=blueviolet">
-  </a>
+<a href="https://nextjs.org/docs" target="_blank"><img alt="NextJs" src="https://img.shields.io/badge/NextJS-white.svg?logo=next.js&logoColor=black">
+</a>
+<a href="https://firebase.google.com" target="_blank"><img alt="Firebase" src="https://img.shields.io/badge/Firebase-blue.svg?logo=firebase&logoColor=orange">
+</a>
+<a href="https://developers.google.com/books" target="_blank"><img alt="Firebase" src="https://img.shields.io/badge/Books%20API-success.svg?logo=google&logoColor=informational">
+</a>
+<a href="https://redux-toolkit.js.org/introduction/getting-started" target="_blank"><img alt="Firebase" src="https://img.shields.io/badge/Redux%20Toolkit-black.svg?logo=redux&logoColor=blueviolet">
+</a>
 
 5.  Javascript </br>
     Javascript is used as the programming language for this application.
