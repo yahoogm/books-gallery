@@ -11,32 +11,29 @@ This website-based book gallery application was built to make it easier for peop
 
 # Build With
 
-1. Next JS </br>
-   Next js is used to build the view that the user will see. I use Next JS because it makes the routing feature easier, and the optimization is very fast.
+- <a href="https://nextjs.org/docs" target="_blank"><img alt="NextJs" src="https://img.shields.io/badge/NextJS-white.svg?logo=next.js&logoColor=black">
+  </a>
+- <a href="https://firebase.google.com" target="_blank"><img alt="Firebase" src="https://img.shields.io/badge/Firebase-blue.svg?logo=firebase&logoColor=orange">
+  </a>
+- <a href="https://developers.google.com/books" target="_blank"><img alt="Firebase" src="https://img.shields.io/badge/Books%20API-success.svg?logo=google&logoColor=informational">
+  </a>
+- <a href="https://redux-toolkit.js.org/introduction/getting-started" target="_blank"><img alt="Firebase" src="https://img.shields.io/badge/Redux%20Toolkit-black.svg?logo=redux&logoColor=blueviolet">
+  </a>
 
-2. Firebase </br>
-   Firebase is used for the login feature with the oauth 2.0 system with Google integration. I use firebase because it is very simple in application development.
+5.  Javascript </br>
+    Javascript is used as the programming language for this application.
 
-3. REST API (Google Books API) </br>
-   REST API is used to connect my app and fetch data of whole books from Google Books API service.
+6.  daisy UI </br>
+    Daisy UI is used as a tool to beautify the appearance of this website. I use Daisy Ui because it's very easy to understand, simple, and easy to customize.
 
-4. Redux Toolkit </br>
-   Redux Toolkit is used to manage state transfers that occur in my application. I use the Redux toolkit because it is very easy to manage because it doesn't need too complicated configuration.
+7.  axios </br>
+    Axios is used to simplify the process of using methods to call the API so that the implemented code is simpler.
 
-5. Javascript </br>
-   Javascript is used as the programming language for this application.
+8.  eslint </br>
+    Eslint is used as a linter in the code, to make it neater and more structured by adding certain rules.
 
-6. daisy UI </br>
-   Daisy UI is used as a tool to beautify the appearance of this website. I use Daisy Ui because it's very easy to understand, simple, and easy to customize.
-
-7. axios </br>
-   Axios is used to simplify the process of using methods to call the API so that the implemented code is simpler.
-
-8. eslint </br>
-   Eslint is used as a linter in the code, to make it neater and more structured by adding certain rules.
-
-9. react icons </br>
-   React icons is used as a provider of icons used for applications. I use this because it is very easy to access and customize.
+9.  react icons </br>
+    React icons is used as a provider of icons used for applications. I use this because it is very easy to access and customize.
 
 10. formik </br>
     Formic is used to handle a form. I use formic because it's very simple to use, and doesn't require long code.
