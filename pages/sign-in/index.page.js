@@ -6,7 +6,8 @@ const SignIn = () => {
   return (
     <HeaderAndFooter>
       <Head>
-        <title>Sign In</title>
+        <title>Books Gallery - Sign In</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <CardSignIn />
     </HeaderAndFooter>

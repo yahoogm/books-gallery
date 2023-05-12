@@ -15,7 +15,8 @@ const DetailBook = ({ book }) => {
   return (
     <HeaderAndFooter>
       <Head>
-        <title>Detail Book</title>
+        <title>Books Gallery - Detail Book</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <BookDetailContent showBook={model.initialize} />
       <DetailReview />
