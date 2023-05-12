@@ -17,35 +17,38 @@ This website-based book gallery application was built to make it easier for peop
 </a>
 <a href="https://developers.google.com/books" target="_blank"><img alt="Firebase" src="https://img.shields.io/badge/Books%20API-success.svg?logo=google&logoColor=informational">
 </a>
-<a href="https://redux-toolkit.js.org/introduction/getting-started" target="_blank"><img alt="Firebase" src="https://img.shields.io/badge/Redux%20Toolkit-black.svg?logo=redux&logoColor=blueviolet">
+<a href="https://redux-toolkit.js.org/introduction/getting-started" target="_blank"><img alt="ReduxToolkit" src="https://img.shields.io/badge/Redux%20Toolkit-black.svg?logo=redux&logoColor=blueviolet">
 </a>
-
-5.  Javascript </br>
-    Javascript is used as the programming language for this application.
-
-6.  daisy UI </br>
-    Daisy UI is used as a tool to beautify the appearance of this website. I use Daisy Ui because it's very easy to understand, simple, and easy to customize.
-
-7.  axios </br>
-    Axios is used to simplify the process of using methods to call the API so that the implemented code is simpler.
-
-8.  eslint </br>
-    Eslint is used as a linter in the code, to make it neater and more structured by adding certain rules.
-
-9.  react icons </br>
-    React icons is used as a provider of icons used for applications. I use this because it is very easy to access and customize.
-
-10. formik </br>
-    Formic is used to handle a form. I use formic because it's very simple to use, and doesn't require long code.
-
-11. react toastify </br>
-    React toastify is used to display more elegant and neat alerts. I use it because the integration is very easy, and the customization is simple.
-
-12. redux persist </br>
-    Redux persist is used to make it easier to add data to local storage only with redux, and there is no need to use the set item / get item method for data in local storage.
-
-13. redux thunk </br>
-    Redux thunk is used to handle API calls that use asynchronous methods.
+<a href="https://id.wikipedia.org/wiki/JavaScript" target="_blank"><img alt="JavaScript" src="https://img.shields.io/badge/Javascript-black.svg?logo=javascript&logoColor=yellow">
+</a>
+<a href="https://daisyui.com/" target="_blank"><img alt="daisyUI" src="https://img.shields.io/badge/daisy%20UI-white.svg?logo=daisyui&logoColor=blueviolet">
+</a>
+<a href="https://axios-http.com/docs/intro" target="_blank"><img alt="axios" src="https://img.shields.io/badge/axios-white.svg?logo=axios&logoColor=blueviolet">
+</a>
+<a href="https://eslint.org/" target="_blank"><img alt="eslint" src="https://img.shields.io/badge/eslint-white.svg?logo=eslint&logoColor=blueviolet">
+</a>
+<a href="https://react-icons.github.io/react-icons/" target="_blank"><img alt="reactIcons" src="https://img.shields.io/badge/React%20Icons-white.svg?logo=react&logoColor=blue">
+</a>
+<a href="https://formik.org/" target="_blank"><img alt="formik" src="https://img.shields.io/badge/formik-blueviolet.svg?logo=formik&logoColor=blueviolet">
+</a>
+<a href="https://formik.org/" target="_blank"><img alt="reactToastify" src="https://img.shields.io/badge/React%20Toastify-white.svg?logo=react&logoColor=blue">
+</a>
+<a href="https://redux-toolkit.js.org/introduction/getting-started" target="_blank"><img alt="reduxPersist" src="https://img.shields.io/badge/Redux%20Persist-black.svg?logo=redux&logoColor=blueviolet">
+</a>
+<a href="https://redux-toolkit.js.org/introduction/getting-started" target="_blank"><img alt="reduxThunk" src="https://img.shields.io/badge/Redux%20Thunk-white.svg?logo=redux&logoColor=blue">
+</a>
+<a href="https://www.figma.com/" target="_blank"><img alt="figma" src="https://img.shields.io/badge/Figma-blueviolet.svg?logo=figma&logoColor=white">
+</a>
+<a href="https://github.com/" target="_blank"><img alt="github" src="https://img.shields.io/badge/Figma-black.svg?logo=github&logoColor=white">
+</a>
+<a href="https://github.com/ai/nanoid" target="_blank"><img alt="nanoid" src="https://img.shields.io/badge/nanoid-white.svg?logo=nanoid&logoColor=white">
+</a>
+<a href="https://github.com/jquense/yup" target="_blank"><img alt="yup" src="https://img.shields.io/badge/yup-white.svg?logo=yup&logoColor=white">
+</a>
+<a href="https://momentjs.com/" target="_blank"><img alt="momentjs" src="https://img.shields.io/badge/momentjs-white.svg?logo=momentjs&logoColor=white">
+</a>
+<a href="https://github.com/fisshy/react-scroll" target="_blank"><img alt="reactScroll" src="https://img.shields.io/badge/React%20Scroll-white.svg?logo=react&logoColor=blue">
+</a>
 
 # How to use
 
