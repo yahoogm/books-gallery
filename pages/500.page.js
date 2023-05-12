@@ -4,7 +4,8 @@ export default function Custom500() {
   return (
     <div className="m-auto min-h-screen flex items-center justify-center">
       <Head>
-        <title>Server-side error</title>
+        <title>Books Gallery - Server-side error</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="text-center space-y-8">
         <h1 className="text-[10rem] font-extrabold">Oops!</h1>
