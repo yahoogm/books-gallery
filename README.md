@@ -9,6 +9,10 @@ This website-based book gallery application was built to make it easier for peop
 
 ![PREVIEW-HOME!](/public/assets/image/preview-home.png)
 
+### Preview Detail Book
+
+![PREVIEW-DETAIL-BOOK!](/public/assets/image/preview-detail-book-with-embed-book.png)
+
 # Build With
 
 <a href="https://nextjs.org/docs" target="_blank"><img alt="NextJs" src="https://img.shields.io/badge/NextJS-white.svg?logo=next.js&logoColor=black">
