@@ -1,6 +1,5 @@
-import Button from '@/components/atoms/Button/Button.atom';
-import Information from '@/components/atoms/Information/Information.atom';
-import ModalReview from '@/components/molecules/ModalReview/ModalReview.atom';
+import { Button, Information } from '@/components/atoms';
+import { ModalReview } from '..';
 import { modifiedName } from '@/config/functions/Functions';
 import { useDetailBook } from '@/config/redux/books/bookSelector.reducer';
 import { Link } from 'react-scroll';

@@ -1,4 +1,4 @@
-import Title from '@/components/atoms/Title/Title.atom';
+import { Title } from '@/components/atoms';
 import { FaGithubSquare, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {

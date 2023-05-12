@@ -1,5 +1,5 @@
 import { FaGoogle } from 'react-icons/fa';
-import Button from '@/components/atoms/Button/Button.atom';
+import { Button } from '@/components/atoms';
 import { auth, provider } from '@/config/firebase/sdk/sdk';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '@/config/redux/user/userSlice.reducer';

@@ -1,4 +1,4 @@
-import Button from '@/components/atoms/Button/Button.atom';
+import { Button } from '@/components/atoms';
 
 const ModalUpdate = ({ children, formik, isOpen, setIsOpen }) => {
   return (

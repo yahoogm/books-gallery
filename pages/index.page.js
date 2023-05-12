@@ -1,6 +1,5 @@
-import CardContent from '@/components/organisme/CardContent/CardContent.organism';
-import HeroContent from '@/components/organisme/HeroContent/HeroContent.organism';
-import HeaderAndFooter from '@/components/templates/HeaderAndFooter/HeaderAndFooter.template';
+import { CardContent, HeroContent } from '@/components/organisme';
+import { HeaderAndFooter } from '@/components/templates';
 import Head from 'next/head';
 
 export default function Home() {
