@@ -1,5 +1,5 @@
-import Button from '@/components/atoms/Button/Button.atom';
 import useModalModel from './ModalReview.atomModel';
+import { Button } from '@/components/atoms';
 
 const Modal = ({ btnTitle, modalTitle }) => {
   const model = useModalModel();

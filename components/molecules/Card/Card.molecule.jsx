@@ -1,4 +1,4 @@
-import Button from '@/components/atoms/Button/Button.atom';
+import { Button } from '@/components/atoms';
 import Image from 'next/image';
 import { HeroImage } from '@/public/assets';
 import { useRouter } from 'next/router';

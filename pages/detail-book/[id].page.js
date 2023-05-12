@@ -1,9 +1,8 @@
-import HeaderAndFooter from '@/components/templates/HeaderAndFooter/HeaderAndFooter.template';
 import Head from 'next/head';
+import { HeaderAndFooter } from '@/components/templates';
 import axios from 'axios';
 import Script from 'next/script';
-import BookDetailContent from '@/components/organisme/BookDetailContent/BookDetailContent.organism';
-import DetailReview from '@/components/organisme/DetailReview/DetailReview.organism';
+import { BookDetailContent, DetailReview } from '@/components/organisme';
 import { useDetailBookModel } from './useDetailBook';
 import { Element } from 'react-scroll';
 

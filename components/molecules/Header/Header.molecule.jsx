@@ -1,4 +1,3 @@
-import Title from '@/components/atoms/Title/Title.atom';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -12,7 +11,7 @@ import { useCallback } from 'react';
 import { toast } from 'react-toastify';
 import { auth } from '@/config/firebase/sdk/sdk';
 import { signOut } from 'firebase/auth';
-import Button from '@/components/atoms/Button/Button.atom';
+import { Button, Title } from '@/components/atoms';
 
 const Header = () => {
   const isLogin = useIsLoginSelector();

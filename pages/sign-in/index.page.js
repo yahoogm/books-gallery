@@ -1,5 +1,5 @@
-import CardSignIn from '@/components/organisme/CardSignIn/CardSignIn.organism';
-import HeaderAndFooter from '@/components/templates/HeaderAndFooter/HeaderAndFooter.template';
+import { CardSignIn } from '@/components/organisme';
+import { HeaderAndFooter } from '@/components/templates';
 import Head from 'next/head';
 
 const SignIn = () => {
