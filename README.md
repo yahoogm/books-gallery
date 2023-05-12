@@ -53,13 +53,3 @@ This website-based book gallery application was built to make it easier for peop
 </a>
 <a href="https://github.com/fisshy/react-scroll" target="_blank"><img alt="reactScroll" src="https://img.shields.io/badge/React%20Scroll-white.svg?logo=react&logoColor=blue">
 </a>
-
-# How to use
-
-<!-- ## Preview home after search the books -->
-
-<!-- ![PREVIEW-HOME!](/public/assets/image/preview-search.png) -->
-
-<!-- ## Preview detail book with embed book -->
-
-<!-- ![PREVIEW-HOME!](/public/assets/image/preview-detail-book-with-embed-book.png) -->
