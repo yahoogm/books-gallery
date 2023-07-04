@@ -66,6 +66,10 @@ const Header = () => {
                   height={50}
                   alt="profile"
                   className="object-contain"
+                  placeholder="blur"
+                  blurDataURL={
+                    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN0sraOBgAClAEVfrGhwQAAAABJRU5ErkJggg=='
+                  }
                   onError={() => setSrc(false)}
                 />
               </div>

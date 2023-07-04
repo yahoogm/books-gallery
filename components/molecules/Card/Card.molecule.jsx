@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { HeroImage } from '@/public/assets';
 import { useRouter } from 'next/router';
 import { modifiedName } from '@/config/functions/Functions';
+import { useState } from 'react';
 
 const Card = ({
   id,
@@ -15,18 +16,23 @@ const Card = ({
   // router
   const router = useRouter();
   const authorsName = modifiedName(authors);
+  const [src, setSrc] = useState(true);
 
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure>
         <Image
-          src={cover}
+          src={src ? cover : HeroImage}
           alt="Shoes"
           width={500}
           height={300}
           priority={true}
           className="object-fill w-full h-48"
-          onError={HeroImage}
+          onError={() => setSrc(false)}
+          placeholder="blur"
+          blurDataURL={
+            'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN0sraOBgAClAEVfrGhwQAAAABJRU5ErkJggg=='
+          }
         />
       </figure>
       <div className="card-body">

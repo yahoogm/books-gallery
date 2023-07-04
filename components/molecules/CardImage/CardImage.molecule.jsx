@@ -21,6 +21,10 @@ const CardImage = () => {
           sizes={'100vh'}
           alt={'Detail Book'}
           className="rounded-2xl shadow-md object-contain"
+          placeholder="blur"
+          blurDataURL={
+            'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN0sraOBgAClAEVfrGhwQAAAABJRU5ErkJggg=='
+          }
           onError={() => HeroImage}
         />
       </div>
