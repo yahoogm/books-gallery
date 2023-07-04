@@ -7,11 +7,12 @@ import {
 import { logoutUser } from '@/config/redux/user/userSlice.reducer';
 import { useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { toast } from 'react-toastify';
 import { auth } from '@/config/firebase/sdk/sdk';
 import { signOut } from 'firebase/auth';
 import { Button, Title } from '@/components/atoms';
+import { HeroImage } from '@/public/assets';
 
 const Header = () => {
   const isLogin = useIsLoginSelector();
@@ -19,6 +20,8 @@ const Header = () => {
   const logout = logoutUser;
   const dispatch = useDispatch();
   const router = useRouter();
+
+  const [src, setSrc] = useState(true);
 
   const handleLogout = useCallback(() => {
     signOut(auth)
@@ -58,11 +61,16 @@ const Header = () => {
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 <Image
-                  src={user.profilePic}
+                  src={src ? user.profilePic : HeroImage}
                   width={50}
                   height={50}
                   alt="profile"
                   className="object-contain"
+                  placeholder="blur"
+                  blurDataURL={
+                    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN0sraOBgAClAEVfrGhwQAAAABJRU5ErkJggg=='
+                  }
+                  onError={() => setSrc(false)}
                 />
               </div>
             </label>

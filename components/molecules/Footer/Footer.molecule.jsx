@@ -1,5 +1,10 @@
 import { Title } from '@/components/atoms';
-import { FaGithubSquare, FaTwitter, FaInstagram } from 'react-icons/fa';
+import {
+  FaGithubSquare,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedin,
+} from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -20,6 +25,12 @@ const Footer = () => {
         </a>
         <a href="https://twitter.com/yahoomanik04" target="_blank">
           <FaTwitter size={25} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/yahoo-garfield-manik-24b67b210/"
+          target="_blank"
+        >
+          <FaLinkedin size={25} />
         </a>
       </div>
     </footer>
