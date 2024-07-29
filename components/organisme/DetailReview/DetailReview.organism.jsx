@@ -27,7 +27,7 @@ const DetailReview = () => {
                     />
                   </div>
 
-                  {user?.userId === review?.userId ? (
+                  {user?.email === review?.email ? (
                     <div className="flex space-x-2 items-center justify-end">
                       <ModalUpdate
                         formik={model.formik}

@@ -8,7 +8,7 @@ import {
   useIsLoginSelector,
   useUserSelector,
 } from '@/config/redux/user/userSelector.reducer';
-import { nanoid } from 'nanoid';
+import { v4 as uuidv4 } from 'uuid';
 import * as Yup from 'yup';
 import moment from 'moment';
 import { useRouter } from 'next/router';
@@ -48,11 +48,12 @@ const useModalModel = () => {
     onSubmit: (values) => {
       const date = new Date();
       const formatedDate = moment(date).format('YYYY-MM-DD HH:mm:ss');
-      const id = nanoid();
+      const id = uuidv4();
 
       isLogin
         ? addReview({
             userName: user.name,
+            email: user.email,
             bookId: detailBook.id,
             profilePic: user.profilePic,
             id: id,

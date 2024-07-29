@@ -17,6 +17,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useCallback, useState } from 'react';
 import { toast } from 'react-toastify';
+import moment from 'moment';
 
 const useDetailReviewModel = () => {
   const reviews = useReviewBookSelector();
@@ -58,7 +59,8 @@ const useDetailReviewModel = () => {
     }),
     onSubmit: (values) => {
       const updatedAt = new Date();
-      updateReviewByIdCollection(values.review, updatedAt);
+      const formatedDate = moment(updatedAt).format('YYYY-MM-DD HH:mm:ss');
+      updateReviewByIdCollection(values.review, formatedDate);
       formik.resetForm();
       setIsOpen(false);
     },
