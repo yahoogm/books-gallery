@@ -1,5 +1,3 @@
-import { useIsLoginSelector } from '@/config/redux/user/userSelector.reducer';
-import { useRouter } from 'next/router';
 import { useCallback, useEffect, useRef } from 'react';
 import { useReadBook } from '@/config/redux/books/bookSelector.reducer';
 import {
@@ -15,16 +13,7 @@ import { collection, onSnapshot } from 'firebase/firestore';
 export const useDetailBookModel = (book, bookId) => {
   const dispatch = useDispatch();
   const identifiers = useReadBook();
-  const isLogin = useIsLoginSelector();
   const canvasRef = useRef();
-  const router = useRouter();
-
-  // check user isLogin
-  useEffect(() => {
-    if (isLogin === false) {
-      router.push('/sign-in');
-    }
-  }, [isLogin, router]);
 
   // add detail book
   useEffect(() => {

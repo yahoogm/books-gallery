@@ -1,11 +1,7 @@
 import { HeroImage } from '@/public/assets';
 import Image from 'next/image';
-import moment from 'moment';
 
 const DetailProfileReview = ({ profileImg, name, date, review }) => {
-  const timeAdd = moment.unix(date?.seconds);
-  const formatTimeAdd = timeAdd.format('YYYY-MM-DD HH:mm:ss');
-
   return (
     <div className="space-y-4">
       <div className="flex space-x-4 items-center">
@@ -19,7 +15,7 @@ const DetailProfileReview = ({ profileImg, name, date, review }) => {
         />
         <div className="flex flex-col">
           <span className="font-semibold">{name}</span>
-          <span className="text-xs">{`${formatTimeAdd}`}</span>
+          <span className="text-xs">{date}</span>
         </div>
       </div>
 
