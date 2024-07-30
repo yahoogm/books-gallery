@@ -6,6 +6,7 @@ import { loginUser } from '@/config/redux/user/userSlice.reducer';
 import { signInWithPopup } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
+import { setCookie } from '@/utils/cookie';
 
 const FormSignIn = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,11 @@ const FormSignIn = () => {
         const email = result.user.email;
         const profilePic = result.user.photoURL;
         const userId = result.user.uid;
+
+        const oauthToken = result._tokenResponse.oauthAccessToken;
+        const expiresOauthToken = result._tokenResponse.oauthExpireIn;
+
+        setCookie('sessionLogin', oauthToken, expiresOauthToken);
 
         dispatch(loginUser({ name, email, profilePic, userId }));
         toast(`Welcome ${name}`, { type: 'success' });

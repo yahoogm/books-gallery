@@ -11,7 +11,7 @@ const DetailReview = () => {
 
   return (
     <div className="space-y-4">
-      <h1 className="text-3xl font-semibold">Reviews</h1>
+      <h1 className="text-3xl font-semibold">Comment</h1>
       <div className="p-10 bg-[#E9DDFF] rounded-2xl space-y-6 shadow-md">
         {model.reviews.length !== 0 ? (
           model.reviews?.map((review) => {
@@ -63,7 +63,7 @@ const DetailReview = () => {
             );
           })
         ) : (
-          <div>The book not have reviews</div>
+          <div>Comment not found</div>
         )}
       </div>
     </div>
