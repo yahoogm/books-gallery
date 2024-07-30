@@ -8,15 +8,15 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="footer items-center px-14 py-4 text-neutral-content bg-[#9ca3af]">
-      <div className="items-center grid-flow-col">
+    <footer className="footer items-center p-4 lg:px-14 lg:py-4 text-neutral-content bg-[#9ca3af]">
+      <div className="items-center grid-flow-col justify-self-center">
         <Title />
         <p>
           Made with <span className="text-primary font-semibold">daisy</span>
-          <span className="text-gray-300 font-semibold">UI</span>
+          <span className="text-gray-200 font-semibold">UI</span>
         </p>
       </div>
-      <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+      <div className="grid-flow-col gap-4 place-self-center justify-self-center">
         <a href="https://github.com/yahoogm" target="_blank">
           <FaGithubSquare size={25} />
         </a>

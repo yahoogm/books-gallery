@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { HeroImage } from '@/public/assets';
 import { Button, Input } from '@/components/atoms';
+import Link from 'next/link';
 
 const Hero = ({ formik }) => {
   return (
@@ -10,20 +11,28 @@ const Hero = ({ formik }) => {
           src={HeroImage}
           priority={true}
           alt="HeroImage"
-          className="max-w-lg rounded-lg shadow-2xl"
+          className="rounded-lg shadow-2xl"
           placeholder="blur"
           blurDataURL={
             'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN0sraOBgAClAEVfrGhwQAAAABJRU5ErkJggg=='
           }
         />
         <div>
-          <h1 className="text-5xl font-bold text-secondary">Online Books</h1>
-          <p className="py-6">
+          <h1 className="text-2xl lg:text-5xl font-bold text-secondary">
+            Online Books
+          </h1>
+          <p className="py-4 lg:py-6">
             Makes it easier for book lovers to read because it can display
             various kinds of books from various genres and famous authors to
             meet the needs of different readers. For the type of book displayed
-            using the
-            <span className="font-semibold"> Google Books API</span>.
+            using the{' '}
+            <Link
+              href={'https://developers.google.com/books'}
+              className="font-semibold underline"
+            >
+              Google Books API
+            </Link>
+            .
           </p>
           <form
             className="space-x-2"
@@ -36,7 +45,9 @@ const Hero = ({ formik }) => {
               value={formik.values.search}
               onChange={formik.handleChange}
               name={'search'}
-              style={'bg-secondary placeholder:text-white text-white max-w-xs'}
+              style={
+                'bg-secondary input-md placeholder:text-white text-white max-w-xs'
+              }
             />
             <Button text={'Search'} variant={'btn-primary'} type={'submit'} />
           </form>

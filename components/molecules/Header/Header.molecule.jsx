@@ -36,7 +36,7 @@ const Header = () => {
   }, [dispatch, logout, router]);
 
   return (
-    <div className="navbar px-14 py-6">
+    <div className="navbar px-4 py-4">
       <div className="flex-1 space-x-20">
         <Link href="/" className="normal-case">
           <Title />
@@ -46,7 +46,7 @@ const Header = () => {
       {isLogin !== true ? (
         <div className="flex-none">
           <div className="dropdown dropdown-end">
-            <Link href="/sign-in" className="btn btn-primary">
+            <Link href="/sign-in" className="btn btn-primary text-xs">
               Sign In
             </Link>
           </div>
