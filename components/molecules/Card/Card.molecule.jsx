@@ -36,10 +36,12 @@ const Card = ({
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-sm line-clamp-1">{title}</h2>
+        <h2 className="card-title text-sm md:text-base line-clamp-1">
+          {title}
+        </h2>
 
         <div className="space-x-1">
-          <span className="col-span-1 text-sm">Author :</span>
+          <span className="col-span-1 text-sm md:text-base">Author :</span>
 
           <span className="truncate text-sm">
             {authors.length != null || undefined ? authorsName : 'null'}

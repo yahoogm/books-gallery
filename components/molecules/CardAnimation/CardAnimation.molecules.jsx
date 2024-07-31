@@ -1,6 +1,6 @@
 const CardLoading = () => {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl animate-pulse">
+    <div className="card lg:w-96 bg-base-100 shadow-xl animate-pulse">
       <div className="h-56">
         <div className="h-56 bg-slate-400 rounded-xl"></div>
       </div>

@@ -36,7 +36,7 @@ const Header = () => {
   }, [dispatch, logout, router]);
 
   return (
-    <div className="navbar px-4 py-4">
+    <div className="navbar px-4 py-4 md:px-12 lg:px-28">
       <div className="flex-1 space-x-20">
         <Link href="/" className="normal-case">
           <Title />

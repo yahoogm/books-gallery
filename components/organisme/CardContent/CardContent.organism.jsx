@@ -7,13 +7,13 @@ const CardContent = () => {
 
   return (
     <div>
-      <h2 className="text-center mb-5 lg:mb-10 text-xl lg:text-4xl font-semibold">
+      <h2 className="text-center mb-5 lg:mb-10 text-xl md:text-2xl lg:text-4xl font-semibold">
         Your Search Books
       </h2>
       {cardModel.loading ? (
         <CardLoadingAnimation />
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-14">
           {cardModel.search.totalItems !== 0 ? (
             cardModel.search?.items?.map((search, idx) => {
               return (

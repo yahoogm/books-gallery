@@ -11,14 +11,14 @@ const Hero = ({ formik }) => {
           src={HeroImage}
           priority={true}
           alt="HeroImage"
-          className="rounded-lg shadow-2xl"
+          className="rounded-lg shadow-2xl lg:max-w-lg"
           placeholder="blur"
           blurDataURL={
             'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN0sraOBgAClAEVfrGhwQAAAABJRU5ErkJggg=='
           }
         />
         <div>
-          <h1 className="text-2xl lg:text-5xl font-bold text-secondary">
+          <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-secondary">
             Online Books
           </h1>
           <p className="py-4 lg:py-6">
