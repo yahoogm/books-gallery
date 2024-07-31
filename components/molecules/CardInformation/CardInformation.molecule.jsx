@@ -10,7 +10,7 @@ const CardInformation = ({ showBook }) => {
   const categoriesName = modifiedName(detailBook?.volumeInfo.categories);
 
   return (
-    <div className="grid flex-grow rounded-box shadow-md items-center p-10">
+    <div className="grid flex-grow lg:rounded-box lg:shadow-md items-center lg:p-10">
       <div className="space-y-6">
         <h2 className="font-semibold text-2xl">
           {detailBook?.volumeInfo?.title
@@ -63,7 +63,7 @@ const CardInformation = ({ showBook }) => {
             }
           />
         </div>
-        <div className="space-x-4 flex">
+        <div className="flex justify-center space-x-2">
           <Link
             activeClass="active"
             to="readBook"

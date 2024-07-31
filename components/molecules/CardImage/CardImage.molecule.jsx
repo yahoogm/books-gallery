@@ -20,7 +20,7 @@ const CardImage = () => {
           fill
           sizes={'100vh'}
           alt={'Detail Book'}
-          className="rounded-2xl shadow-md object-contain"
+          className="rounded-2xl shadow-md lg:object-contain"
           placeholder="blur"
           blurDataURL={
             'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN0sraOBgAClAEVfrGhwQAAAABJRU5ErkJggg=='

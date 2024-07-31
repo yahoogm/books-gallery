@@ -12,7 +12,7 @@ const DetailReview = () => {
   return (
     <div className="space-y-4">
       <h1 className="text-3xl font-semibold">Comment</h1>
-      <div className="p-10 bg-[#E9DDFF] rounded-2xl space-y-6 shadow-md">
+      <div className="rounded-2xl space-y-6">
         {model.reviews.length !== 0 ? (
           model.reviews?.map((review) => {
             return (
@@ -57,8 +57,6 @@ const DetailReview = () => {
                     </div>
                   ) : null}
                 </div>
-
-                <div className="w-full h-1 bg-[#D0BCFF] rounded-2xl mt-4"></div>
               </div>
             );
           })
