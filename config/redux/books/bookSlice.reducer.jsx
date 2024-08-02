@@ -42,6 +42,13 @@ export const searchSlice = createSlice({
         reviewId: action.payload,
       };
     },
+
+    addSearchBooks: (state, action) => {
+      return {
+        ...state,
+        books: action.payload,
+      };
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -70,6 +77,11 @@ export const searchSlice = createSlice({
 });
 
 const { actions, reducer: searchReducer } = searchSlice;
-export const { addDetailBook, addReadBook, addReviewBook, addReviewId } =
-  actions;
+export const {
+  addDetailBook,
+  addReadBook,
+  addReviewBook,
+  addReviewId,
+  addSearchBooks,
+} = actions;
 export default searchReducer;
