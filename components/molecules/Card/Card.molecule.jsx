@@ -40,22 +40,22 @@ const Card = ({
           {title}
         </h2>
 
-        <div className="space-x-1">
+        <div className="space-x-1 truncate">
           <span className="col-span-1 text-sm md:text-base">Author :</span>
 
-          <span className="truncate text-sm">
+          <span className="text-sm">
             {authors.length != null || undefined ? authorsName : 'null'}
           </span>
         </div>
 
-        <div className="space-x-1">
+        <div className="space-x-1 truncate">
           <span className="col-span-1 text-sm">Total Edition :</span>
-          <span className="truncate text-sm">{publisher}</span>
+          <span className=" text-sm">{publisher}</span>
         </div>
 
-        <div className="space-x-2">
+        <div className="space-x-2 truncate">
           <span className="col-span-2 text-sm">Published Date :</span>
-          <span className="truncate text-sm">{publishedDate}</span>
+          <span className=" text-sm">{publishedDate}</span>
         </div>
 
         <div className="card-actions justify-end">
