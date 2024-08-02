@@ -2,7 +2,7 @@ import CardLoading from '@/components/molecules/CardAnimation/CardAnimation.mole
 
 const CardLoadingAnimation = () => {
   return (
-    <div className="grid lg:grid-cols-3 lg:gap-14">
+    <div className="grid gap-2 lg:grid-cols-3 lg:gap-14">
       <CardLoading />
       <CardLoading />
       <CardLoading />

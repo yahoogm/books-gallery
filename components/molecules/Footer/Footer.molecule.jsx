@@ -1,4 +1,3 @@
-import { Title } from '@/components/atoms';
 import Link from 'next/link';
 import {
   FaGithubSquare,
@@ -11,7 +10,6 @@ const Footer = () => {
   return (
     <footer className="flex justify-between p-4 md:px-12 md:py-4 lg:px-28 lg:py-4 text-neutral-content bg-[#9ca3af]">
       <div className="flex justify-items-center items-center space-x-4">
-        <Title />
         <div className="flex items-center space-x-1">
           <div>Made with</div>
           <Link

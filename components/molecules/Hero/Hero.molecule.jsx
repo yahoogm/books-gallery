@@ -35,7 +35,7 @@ const Hero = ({ formik }) => {
             .
           </p>
           <form
-            className="space-x-2"
+            className="space-x-2 flex"
             onSubmit={(event) => {
               event.preventDefault(), formik.handleSubmit(event);
             }}
@@ -46,7 +46,7 @@ const Hero = ({ formik }) => {
               onChange={formik.handleChange}
               name={'search'}
               style={
-                'bg-secondary input-md placeholder:text-white text-white max-w-xs'
+                'bg-secondary input-md placeholder:text-white max-w-xs text-white'
               }
             />
             <Button text={'Search'} variant={'btn-primary'} type={'submit'} />

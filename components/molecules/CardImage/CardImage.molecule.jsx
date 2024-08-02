@@ -13,7 +13,7 @@ const CardImage = () => {
 
   return (
     <div className="grid card rounded-box place-items-center">
-      <div className="w-96 h-96 relative">
+      <div className="w-full h-60 lg:w-96 lg:h-96 relative">
         <Image
           src={src}
           priority={true}
