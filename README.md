@@ -43,9 +43,7 @@ This website-based book gallery application was built to make it easier for peop
 </a>
 <a href="https://www.figma.com/" target="_blank"><img alt="figma" src="https://img.shields.io/badge/Figma-blueviolet.svg?logo=figma&logoColor=white">
 </a>
-<a href="https://github.com/" target="_blank"><img alt="github" src="https://img.shields.io/badge/Figma-black.svg?logo=github&logoColor=white">
-</a>
-<a href="https://github.com/ai/nanoid" target="_blank"><img alt="nanoid" src="https://img.shields.io/badge/nanoid-white.svg?logo=nanoid&logoColor=white">
+<a href="https://github.com/ai/uuidv4" target="_blank"><img alt="uuidv4" src="https://img.shields.io/badge/uuidv4-white.svg?logo=uuidv4&logoColor=white">
 </a>
 <a href="https://github.com/jquense/yup" target="_blank"><img alt="yup" src="https://img.shields.io/badge/yup-white.svg?logo=yup&logoColor=white">
 </a>
